@@ -1,0 +1,24 @@
+.header-dmg2kOW{
+    font-family: 'Permanent Marker', cursive;
+    color: brown;
+    font-size: 1.5rem;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.header-link-dmg2kOW{
+    text-decoration: none;
+    color: brown;
+    transition-duration: 250ms;
+    transition-property: color; /*Specify for performance, Can be cpu intensive if you just leave it as "all" which is the default */
+}
+.header-link-dmg2kOW:hover{
+    color: red;
+    
+}
+@media screen and (min-width: 768px){
+    .header-dmg2kOW{
+        font-size: 3rem;
+        margin-right: 50px;
+    }
+    
+}

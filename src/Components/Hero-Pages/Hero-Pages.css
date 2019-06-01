@@ -1,0 +1,130 @@
+/* font-family: 'Finger Paint', cursive; */
+/* font-family: 'Frijole', cursive; */
+/* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Permanent Marker', cursive; */
+.hero-page-container{
+    display:grid;
+    grid-template-columns: 3.5fr 2.5fr;
+    grid-template-rows: auto auto auto;
+}
+.hero-page-selected-hero{
+    display: grid;
+     justify-items: center;
+    justify-content: center;
+    grid-column: 1/2;
+}
+.hero-page-kill-hero{
+grid-column: 2/-1;
+min-width: 170px;
+}
+
+
+.hidden {
+    position:absolute;
+    visibility:hidden;
+    opacity:0;
+}
+
+
+.hero-abilities-ul{
+    list-style: none;
+    color: white;
+    font-family: 'Righteous', cursive;
+    padding: 0;
+    line-height: 2.2;
+    font-size:.8rem;
+    min-width: 35px;
+}
+.hero-abilities-ul li{
+margin-right: 3px;
+}
+.hero-abilities-ul button{
+    
+    font-family: 'Righteous', cursive;
+    font-size:.8rem;
+    background-color: tomato;
+    border: solid brown .5px;
+    padding: 0px .5px;
+    
+}
+.hero-abilities{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+/*Ability Summary styles*/
+.ability-summary{
+    justify-content: center;
+    max-width: 650px;
+    justify-self: center;
+    font-family: 'Permanent Marker', cursive;
+    color: brown;
+    font-size: 1.5rem;
+}
+.ability-summary > p{
+    font-size: 1rem;
+    max-height: 250px;
+    max-width: 650px;
+    font-family: 'Righteous', cursive;
+    overflow: overlay;
+    padding: 0;
+}
+/* Amplified Button active animation and styles */
+.amplification-buttons{
+    margin-top:20px;
+    display: block;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.hero-page-selected-hero .amplification-buttons li {
+    font-family: 'Righteous', cursive;
+    background-color: tomato;
+    margin-bottom: 5px;
+    width:auto;
+    border: solid brown;
+    font-size: 1rem;
+    display:inline-block;
+    margin-right: 1px;
+}
+
+
+@keyframes redPulse {
+    from { background-color: tomato; box-shadow: 0 0 9px #333; border-color:brown; color:yellow; }
+    50% { background-color: brown; box-shadow: 0 0 18px #bd0909;border-color:rgba(255, 255, 0, 0.144); color:white; }
+    to { background-color: tomato; box-shadow: 0 0 9px #333;border-color:brown; color:yellow; }
+  }
+  .hero-page-selected-hero .amplification-buttons li input:checked + label  {
+    animation-name: redPulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  
+  }
+  .fade-out{
+    opacity:1;
+    transition-duration:.5s;
+    opacity:0;
+  }
+
+  /* Media Queries */
+  @media screen and (min-width: 768px){
+    .ability-summary{
+        font-size: 3rem;
+    }
+    .ability-summary > p{
+        font-size:1.2rem;
+    }
+    .hero-abilities-ul button{
+        font-size:1rem;
+        border: solid brown 3px;
+        padding:1px 6px;
+    }
+    .hero-abilities-ul{
+        font-size:1.2rem;
+        
+    }
+    .hero-page-container{
+        display:grid;
+        grid-template-columns: 2fr 2fr;
+    }
+}

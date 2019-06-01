@@ -1,0 +1,27 @@
+.background-img{
+    top:0;
+    left:-175px;/*Make it so on phones half screen is winston face, and half screen is zarya face */
+    min-width:100%;
+    min-height:100%;
+    z-index: -50;
+    text-align:center;
+    position: fixed;
+
+}
+.background-img-overlay{
+    top:0;
+    left: 0;
+    min-width:100%;
+    min-height:100%;
+    position: fixed;
+    z-index:-49;
+   /* background-color:rgba(0, 0, 0, 0.473); */
+    background-color:rgba(0, 0, 0, 0.95);
+}
+@media screen and (min-width: 768px){
+    .background-img{
+        left: -150px;
+        min-width: 110%;
+        /* Make it so on big screens all of the heroes of background are shown, and have half of roadhog face and half of winston face in order to fit on screen */
+    }
+}

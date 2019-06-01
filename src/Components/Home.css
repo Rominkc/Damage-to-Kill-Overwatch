@@ -1,0 +1,35 @@
+.hero-list{
+    display: flex;
+    margin: 0;
+    flex-wrap: wrap;
+    list-style: none;
+    
+    padding:0px;
+    max-width: 750px;
+    justify-content: center;
+}
+.hero-list-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom:100px;
+}
+.chosen-hero-img{
+    height:140px;
+}
+li img{
+width:50px;
+cursor: pointer;
+transition-duration: 250ms;
+transition-property: transform;
+}
+li img:hover{
+    transform:scale(1.4)
+}
+@media screen and (min-width: 768px){
+    li img{
+        width:75px;
+    }
+    .chosen-hero-img{
+        height:350px;
+    }
+}
