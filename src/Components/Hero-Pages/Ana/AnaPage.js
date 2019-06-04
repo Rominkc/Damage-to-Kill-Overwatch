@@ -1,6 +1,7 @@
 import React from 'react'
 import heroArray from '../../heroArray';
 import damageCalculation from '../damageCalculation';
+import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT'
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
@@ -43,9 +44,9 @@ const AnaPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Ana.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.primaryFire.damage,
+                                <button onClick={()=>damageCalculationDoT(Ana.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.primaryFire.damage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
-                                    X
+                                    DoT
                                     </button>
                             </li>  
                             <li>

@@ -1,11 +1,13 @@
 import React from 'react'
 import heroArray from '../../heroArray';
 import damageCalculation from '../damageCalculation';
+import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -70,13 +72,13 @@ const HanzoPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Hanzo.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Hanzo.abilityThree.arrowDamage,
+                                <button onClick={()=>damageCalculation(Hanzo.abilityThree.name+'(Arrow)',setAbilitySummary,setArmor,setHealth,armor,health,Hanzo.abilityThree.arrowDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
-                                    A
+                                    Arw
                                     </button>
-                                <button onClick={()=>damageCalculation(Hanzo.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Hanzo.abilityThree.dragonDamage,
+                                <button onClick={()=>damageCalculationDoT(Hanzo.abilityThree.name+'(Dragon)',setAbilitySummary,setArmor,setHealth,armor,health,Hanzo.abilityThree.dragonDamage,
                                     undefined,discordModifier)}>
-                                    D
+                                    DPS
                                     </button>
                             </li>
                             <li>

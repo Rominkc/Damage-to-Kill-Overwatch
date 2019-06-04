@@ -48,7 +48,8 @@ const Widowmaker = {
                         //15 damage per second 75 total
                         //Widowmaker adheres a swiftly-arming venom mine to nearly any surface. 
                         //When a target wanders within range of the mine’s motion trigger, it explodes, delivering poison gas to any enemies in the vicinity
-                        damage:15,
+                        damagePerSecond:15,
+                        damageOverTime:75,
                         name:'Venom Mine'
                     },
             // 'q'|ultimate ability

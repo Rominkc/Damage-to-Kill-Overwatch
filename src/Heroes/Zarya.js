@@ -14,7 +14,7 @@ const Zarya = {
                         hasFallOffDamage:false,
                         // fall off damage is assumed to be at the range where the fallout damage multiplier is fully active
                         // i.e if multiplier is .3 and is applied fully when the shot is taken from 40meters away then this is the range that is assumed
-                        //95 Damage per second, 20 rounds of ammo per second 95/20 = 4.75 damage each tick
+                        //95 Damage per second, 20 rounds of ammo per second 95/20 = 4.75 damage each tick <== Might not be 100% accurate because use of ammo might not be indicative of how many ticks
                         damage:95,
                         pPerSecond:20,
                         name:'Particle Cannon'
@@ -49,7 +49,8 @@ const Zarya = {
                         //Impact: 5, Damage over time: 4.68 per second, 18.72 overall 
                         //Zarya launches a gravity bomb that draws in enemy combatants and deals damage while they’re trapped.
                         impactDamage:5,
-                        damage:4.68,
+                        damagePerSecond:4.68,
+                        damageOverTime:18.72,
                         name:'Graviton Surge'
                     },
         melee:30,               

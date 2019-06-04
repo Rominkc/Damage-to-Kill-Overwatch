@@ -1,14 +1,9 @@
 import roundToX from '../roundToX';   
 
 
-//Takes one more param than damageCalculation which is pPerS, this represents how many projectiles are shot out with each ability i.e doomfist shoots 11 pellets per shot
-// or how many projectiles are shot out per second based on ammo consumption i.e Zarya consumes 20 ammo per second and does 95 damage per second
-//Main difference with this function and general function is how the damage is calculated vs armor
-//Since it is multiple hits vs armor each instance of damage is reduced by half or 3, as opposed to the total damage being reduced by half or 3
-// (damage-(pPerS*3)) finds damage reduced for instances of damage greater than or = 6, and damage/2 finds damage reduced for instances of damage less than 6
-// reduced damage for instances of damage less than 6 can also be found by damage - (pPerS * damagePerProjectile)/2 
+//Stands for damage calculation beam type damage. Beam type damage does 20% less against armor. So each 1 damage would do .8 damage instead against armor
 //
-const damageCalculationDPS = (abilityName,setAbilitySummary,setArmor,setHealth,armor,health,damage,pPerS = 1, headShotModifier = 1, discordModifier = 1,...amplifiers) => {
+const damageCalculationBTD = (abilityName,setAbilitySummary,setArmor,setHealth,armor,health,damage, headShotModifier = 1, discordModifier = 1,...amplifiers) => {
     
     let damageAmplifier = amplifiers.reduce((totalAmp, currAmp) => totalAmp + currAmp, 0)
     damageAmplifier += 1
@@ -16,13 +11,13 @@ const damageCalculationDPS = (abilityName,setAbilitySummary,setArmor,setHealth,a
     
     console.log(damageAmplifier)
     damage = roundToX(damage * damageAmplifier,2)
-    const damagePerProjectile = damage / pPerS
+    const damagePPToArmor = .8 // Damage per point(of damage) to armor  i.e 1 damage would do .8 damage because it is reduced by 20%
 
-    const carryOverDamageCalcDPShot =(remainingArmor,shouldSetHealth)=> {
-        const damagePPToArmor= damagePerProjectile < 6 ? roundToX(damagePerProjectile/2,2) : roundToX(damagePerProjectile -3,2);
+    const carryOverDamageCalcBTD =(remainingArmor,shouldSetHealth)=> {
+        
         let remainingDamage = 0;
         let projectilesUsed = 0;
-        let adjustedDamage=0;
+        let adjustedDamage = 0;
         while(remainingArmor > 0 ){
             remainingArmor-=damagePPToArmor;
             adjustedDamage+=damagePPToArmor;
@@ -44,25 +39,34 @@ const damageCalculationDPS = (abilityName,setAbilitySummary,setArmor,setHealth,a
     } 
 
     const noRemainingArmorCalc=(remainingArmor)=>{
-        // Damage per projectile to armor
-        const damagePPToArmor= damagePerProjectile < 6 ? roundToX(damagePerProjectile/2,2) : roundToX(damagePerProjectile -3,2);
-        for(let i=0; i < pPerS; i++ ){
+        
+        //Before iterating through all of the damage, check if the whole sum of damage * damagePPToArmor is greater or equal 0,
+        // this can cause us to not have to loop through the entire damage on every calculation
+        if(armor - (damage * damagePPToArmor) >= 0 ){
+            return false;
+        }
+        //do one less iteration of the loop because damage might have decimals, so check for this outside of the loop
+        //for example if damage would 3 it would stop at 2 then  3 - 2 is 1 and you still have correct number of checks
+        //or if number is 3.2 it would stop at 3 (damage would be 2.2 which would make i iterate past 2) then you would do 3 - 3.2 which would give you .2 and again the right amount of checks
+        let i=0
+        for( ; i <  damage - 1; i++ ){
             remainingArmor-=damagePPToArmor
             //console.log(remainingArmor + " Inside remainingArmorCalc")
-           //If armor ever falls below zero than damage should be calculated for projectiles that hit armor, and then the projectiles that hit after armor was depleted
+            //If armor ever falls below zero than damage should be calculated for projectiles that hit armor, and then the projectiles that hit after armor was depleted 
             if (remainingArmor <= 0)
             {return true}
         }
+        const remainingDecimal = damage - i;
+        if (remainingArmor - remainingDecimal * .8 <= 0 )
+        { return true }
         //else return false because killHero still has armor left
-        return false;
+        else { return false }
+        
     }
     
     armor <= 0 ? setHealth(prevHealth => prevHealth - damage >= 0 ?  roundToX(prevHealth - damage,2) : 0 )
-    //:damagePerProjectile < 6 && armor - damage/2 <= 0 ? carryOverDamageCalcDPShot(false)
-    //:armor - (damage-(pPerS*3)) < 0 ? carryOverDamageCalcDPShot(true)
-    :noRemainingArmorCalc(armor) ? carryOverDamageCalcDPShot(armor,true)
-    :damagePerProjectile < 6 ? setArmor(prevArmor => roundToX(prevArmor -  damage/2,2) )
-    : setArmor(prevArmor => roundToX(prevArmor - (damage-(pPerS*3)),2) )
+    :noRemainingArmorCalc(armor) ? carryOverDamageCalcBTD(armor,true)
+    : setArmor(prevArmor => roundToX(prevArmor - (damage * .8) , 2 ) )
     
     
     setAbilitySummary((prevAbilitySummary)=>{
@@ -89,4 +93,4 @@ const damageCalculationDPS = (abilityName,setAbilitySummary,setArmor,setHealth,a
 
         return(updatedAbilitySummary) })
 }
-export default damageCalculationDPS;
+export default damageCalculationBTD;

@@ -1,6 +1,7 @@
 import React from 'react'
 import heroArray from '../../heroArray';
 import damageCalculation from '../damageCalculation';
+import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT'
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
@@ -49,7 +50,11 @@ const MoiraPage =(props)=>{
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damage,
+                                <button onClick={()=>damageCalculationDoT(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damageOverTime,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
+                                    DoT
+                                    </button>
+                                <button onClick={()=>damageCalculationDoT(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damagePerSecond,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DPS
                                     </button>

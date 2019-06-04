@@ -2,11 +2,13 @@ import React from 'react'
 import heroArray from '../../heroArray';
 import damageCalculation from '../damageCalculation';
 import damageCalculationDPS from '../damageCalculationDPS';
+import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -64,9 +66,13 @@ const ZaryaPage =(props)=>{
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Imp
                                     </button>
-                                <button onClick={()=>damageCalculation(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.damage,
+                                <button onClick={()=>damageCalculationDoT(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.damagePerSecond,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DPS
+                                    </button>
+                                <button onClick={()=>damageCalculationDoT(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.damageOverTime,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
+                                    DoT
                                     </button>
                             </li>
                             <li>

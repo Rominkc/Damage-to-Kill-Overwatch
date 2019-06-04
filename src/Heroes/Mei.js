@@ -47,7 +47,7 @@ const Mei = {
                     canHeadshot:false,
                     //Does 100 damage over duration (5 secs), 20 dmg per sec, freezes all targets in affected area
                     //Travels 20 meters per second so estimation of projects per second is 20 aswell, might not be 100% accurate
-                    damage:20,
+                    damage:100,
                     pPerSecond:20,
                     name:'Blizzard'
                 },

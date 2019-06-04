@@ -1,6 +1,7 @@
 import React from 'react'
 import heroArray from '../../heroArray';
 import damageCalculation from '../damageCalculation';
+import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT'
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
@@ -64,17 +65,17 @@ const AshePage =(props)=>{
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Ashe.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.minDamage,
+                                <button onClick={()=>damageCalculation(Ashe.abilityOne.name+'(Explosion)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Ashe.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.maxDamage,
+                                <button onClick={()=>damageCalculation(Ashe.abilityOne.name+'(Explosion)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mx
                                     </button>
-                                <button onClick={()=>damageCalculation(Ashe.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.burnDamage,
+                                <button onClick={()=>damageCalculationDoT(Ashe.abilityOne.name + '(Burn)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.burnDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
-                                    BD
+                                    DoT
                                     </button>
                                 
                             </li>

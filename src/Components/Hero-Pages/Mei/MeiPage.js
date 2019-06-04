@@ -2,6 +2,7 @@ import React from 'react'
 import heroArray from '../../heroArray';
 import damageCalculation from '../damageCalculation';
 import damageCalculationDPS from '../damageCalculationDPS';
+import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT'
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
@@ -56,9 +57,9 @@ const MeiPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Mei.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.abilityThree.damage,
-                                    Mei.abilityThree.pPerSecond,undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
-                                    DPS
+                                <button onClick={()=>damageCalculationDoT(Mei.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.abilityThree.damage,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
+                                    DoT
                                     </button>
                             </li>
                             <li>

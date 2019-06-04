@@ -1,12 +1,12 @@
 import React from 'react'
 import heroArray from '../../heroArray';
 import damageCalculation from '../damageCalculation';
+import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const WidowmakerPage =(props)=>{
@@ -65,9 +65,13 @@ const WidowmakerPage =(props)=>{
                               
                             
                             <li>
-                                <button onClick={()=>damageCalculation(Widowmaker.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.abilityTwo.damage,
+                                <button onClick={()=>damageCalculationDoT(Widowmaker.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.abilityTwo.damagePerSecond,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
+                                    </button>
+                                <button onClick={()=>damageCalculationDoT(Widowmaker.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.abilityTwo.damageOverTime,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
+                                    DoT
                                     </button>
                             </li>
                             <li>

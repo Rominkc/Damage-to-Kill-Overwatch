@@ -46,9 +46,9 @@ const McCree = {
                     doesDamage:true,
                     canHeadshot:false,
                     // Deadeye Damage Description: 0.2 to 1.0 seconds: 100 per second; 80 overall, 1.0 to 1.5 seconds: 275 per second, 1.5 seconds to 6.2 seconds: 550 per second
-                    oneSecDamage:100,
-                    twoSecDamage:512.5,
-                    threeSecDamage:1062.5,
+                    oneSecDamage:80,
+                    twoSecDamage:492.5,
+                    threeSecDamage:1042.5,
                     name:'Deadeye'
                 },
     melee:30,               

@@ -30,10 +30,11 @@ const Moira = {
         abilityOne:{
                         doesDamage:true,
                         canHeadshot:false,
-                        //Up to 200 damage over 4 seconds (50 per second)
-                        damage:50,
+                        //Up to 200 damage over 4 seconds (50 per second) 200 damage of time
+                        damageOverTime:200,
+                        damagePerSecond:50,
                         //Up to 300 health over 4 seconds (75 per second)
-                        healing:75,
+                        healing:300,
                         name:'Biotic Orb'
                     },
             // 'e' ability
