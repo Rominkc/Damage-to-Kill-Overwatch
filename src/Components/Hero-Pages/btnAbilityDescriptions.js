@@ -27,3 +27,5 @@ const btnAbilityDescriptions ={
     Jump:"Damage from Winston's initial jump",
     Imp:"Impact damage from Graviton Surge",
 }
+
+export default btnAbilityDescriptions;

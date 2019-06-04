@@ -14,23 +14,27 @@ const damageCalculationBTD = (abilityName,setAbilitySummary,setArmor,setHealth,a
     const damagePPToArmor = .8 // Damage per point(of damage) to armor  i.e 1 damage would do .8 damage because it is reduced by 20%
 
     const carryOverDamageCalcBTD =(remainingArmor,shouldSetHealth)=> {
-        
+      
         let remainingDamage = 0;
-        let projectilesUsed = 0;
+        let pointOfDamageUsed = 0;
         let adjustedDamage = 0;
         while(remainingArmor > 0 ){
             remainingArmor-=damagePPToArmor;
+            remainingArmor=roundToX(remainingArmor,2) //Needed because sometimes too many decimal places were caused from subtracting .8 and this would lead to an incorrect calculation 
             adjustedDamage+=damagePPToArmor;
-            //console.log(remainingArmor + " Inside carryOverDamageCalcDPShot")
+            //console.log(remainingArmor + " Inside carryOverDamageCalcDPShot ")
             if(remainingArmor < 0){
                 remainingDamage+=remainingArmor*-1 //accounts for remainingArmor being a negative value
                 adjustedDamage+=remainingArmor //accounts for/counteracts the damage that was just added to remainingDamage, as remainingDamage will be added to adjustedDamage at the end of all calculations
             }
-            projectilesUsed++;
+            pointOfDamageUsed++;
         }
-        const projectilesRemaining = pPerS - projectilesUsed;
-        remainingDamage += projectilesRemaining * damagePerProjectile
-        adjustedDamage+=remainingDamage
+        //Points of damage used i.e if ability had total of 65 damage and armor was 48, 60 points of damage(60 *.8 = 48)would be reduced by .8, so there would be 5 points left damage that was not reduced
+        const pointsOfDamageRemaining = damage - pointOfDamageUsed;
+        //if remaining armor fell below 0, add this number to pointsOfDamageRemaining for final calculation 
+        //i.e remainingDamage is .4 so you add that + pointsOfDamageRemaining to get final number, but if armor hit exactly 0, then remainingDamage would just equal pointsOfDamageRemaining
+        remainingDamage += pointsOfDamageRemaining 
+        adjustedDamage+=remainingDamage//add unreduced damage + reduced damage to get adjusted damage for final number used in AbilitySummary 
         if(shouldSetHealth){
             setArmor(0)
             remainingDamage > health ? setHealth(0) : setHealth(prevHealth => roundToX(prevHealth - remainingDamage,2))
@@ -73,9 +77,8 @@ const damageCalculationBTD = (abilityName,setAbilitySummary,setArmor,setHealth,a
         //adjusts for armor
         //const adjustedDamage = damagePerProjectile > 6 ? roundToX((damage-(pPerS*3)),2) : roundToX(damage /  2 , 2);
         const adjustedDamage =  armor <= 0 ? 0
-        :noRemainingArmorCalc(armor) ? carryOverDamageCalcDPShot(armor,false)
-        :damagePerProjectile < 6 ? roundToX(damage /  2 , 2)
-        :roundToX((damage-(pPerS*3)),2) 
+        :noRemainingArmorCalc(armor) ? carryOverDamageCalcBTD(armor,false)
+        :roundToX( damage * .8 , 2 )
 
         const damageAmpToPercent = roundToX(((damageAmplifier-1)*100),2)
        

@@ -1,12 +1,14 @@
 import React from 'react'
 import heroArray from '../../heroArray';
-import damageCalculation from '../damageCalculation';
+import damageCalculation from '../../Damage-Calculations/damageCalculation';
 import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT'
+import damageCalculationBTD from '../../Damage-Calculations/damageCalculationBTD';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -44,7 +46,7 @@ const MoiraPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Moira.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.secondaryFire.damage,
+                                <button onClick={()=>damageCalculationBTD(Moira.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.secondaryFire.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                    DPS
                                     </button>
@@ -60,7 +62,7 @@ const MoiraPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Moira.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityThree.damage,
+                                <button onClick={()=>damageCalculationBTD(Moira.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityThree.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>

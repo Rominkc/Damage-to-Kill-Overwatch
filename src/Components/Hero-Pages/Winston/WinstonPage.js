@@ -1,7 +1,7 @@
 import React from 'react'
 import heroArray from '../../heroArray';
-import damageCalculation from '../damageCalculation';
-import damageCalculationDPS from '../damageCalculationDPS';
+import damageCalculation from '../../Damage-Calculations/damageCalculation';
+import damageCalculationBTD from '../../Damage-Calculations/damageCalculationBTD';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
@@ -44,8 +44,8 @@ const WinstonPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Winston.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.primaryFire.damage,
-                                    Winston.primaryFire.pPerSecond,undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
+                                <button onClick={()=>damageCalculationBTD(Winston.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.primaryFire.damage,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>  

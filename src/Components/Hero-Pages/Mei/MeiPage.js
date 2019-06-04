@@ -1,13 +1,14 @@
 import React from 'react'
 import heroArray from '../../heroArray';
-import damageCalculation from '../damageCalculation';
-import damageCalculationDPS from '../damageCalculationDPS';
+import damageCalculation from '../../Damage-Calculations/damageCalculation';
 import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT'
+import damageCalculationBTD from '../../Damage-Calculations/damageCalculationBTD';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -45,8 +46,8 @@ const MeiPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Mei.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.primaryFire.damage,
-                                    Mei.primaryFire.pPerSecond,undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
+                                <button onClick={()=>damageCalculationBTD(Mei.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.primaryFire.damage,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>  

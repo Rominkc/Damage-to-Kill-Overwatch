@@ -1,6 +1,6 @@
 import React from 'react'
 import heroArray from '../../heroArray';
-import damageCalculation from '../damageCalculation';
+import damageCalculation from '../../Damage-Calculations/damageCalculation';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';

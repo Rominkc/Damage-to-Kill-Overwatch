@@ -1,12 +1,13 @@
 import React from 'react'
 import heroArray from '../../heroArray';
-import damageCalculation from '../damageCalculation';
-import damageCalculationDPS from '../damageCalculationDPS';
+import damageCalculation from '../../Damage-Calculations/damageCalculation';
+import damageCalculationBTD from '../../Damage-Calculations/damageCalculationBTD';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -46,20 +47,20 @@ const SymmetraPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelOneDamage,
-                                    Symmetra.primaryFire.pPerSecond,undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
+                                <button onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelOneDamage,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelTwoDamage,
-                                    Symmetra.primaryFire.pPerSecond,undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
+                                <button onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelTwoDamage,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelThreeDamage,
-                                    Symmetra.primaryFire.pPerSecond,undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
+                                <button onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelThreeDamage,
+                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>
@@ -78,8 +79,8 @@ const SymmetraPage =(props)=>{
                                     </button>
                             </li>   
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Symmetra.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.abilityOne.damage,
-                                    Symmetra.abilityOne.pPerSecond,undefined,discordModifier)}>
+                                <button onClick={()=>damageCalculationBTD(Symmetra.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.abilityOne.damage,
+                                    undefined,discordModifier)}>
                                     DPS
                                     </button>
                             </li>
