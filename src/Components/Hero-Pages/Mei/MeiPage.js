@@ -8,7 +8,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -46,7 +47,8 @@ const MeiPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Mei.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.primaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationBTD(Mei.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.primaryFire.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
@@ -58,7 +60,8 @@ const MeiPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationDoT(Mei.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.DoT}
+                                onClick={()=>damageCalculationDoT(Mei.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.abilityThree.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DoT
                                     </button>
@@ -75,7 +78,7 @@ const MeiPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

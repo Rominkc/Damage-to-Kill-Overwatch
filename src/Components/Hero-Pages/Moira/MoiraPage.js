@@ -8,7 +8,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -46,23 +47,27 @@ const MoiraPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Moira.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.secondaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationBTD(Moira.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.secondaryFire.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                    DPS
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculationDoT(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damageOverTime,
+                                <button data-tip={btnAbilityDescriptions.DoT}
+                                onClick={()=>damageCalculationDoT(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damageOverTime,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DoT
                                     </button>
-                                <button onClick={()=>damageCalculationDoT(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damagePerSecond,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationDoT(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damagePerSecond,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DPS
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Moira.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationBTD(Moira.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityThree.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
@@ -79,7 +84,7 @@ const MoiraPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

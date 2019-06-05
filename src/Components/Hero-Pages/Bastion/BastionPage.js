@@ -6,6 +6,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -42,31 +44,37 @@ const BastionPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Bastion.primaryFireRecon.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.primaryFireRecon.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn} 
+                                onClick={()=>damageCalculation(Bastion.primaryFireRecon.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.primaryFireRecon.minDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Bastion.primaryFireRecon.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.primaryFireRecon.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx} 
+                                onClick={()=>damageCalculation(Bastion.primaryFireRecon.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.primaryFireRecon.maxDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Bastion.primaryFireSentry.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.primaryFireSentry.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn} 
+                                onClick={()=>damageCalculation(Bastion.primaryFireSentry.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.primaryFireSentry.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Bastion.primaryFireSentry.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.primaryFireSentry.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                 onClick={()=>damageCalculation(Bastion.primaryFireSentry.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.primaryFireSentry.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Bastion.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.abilityThree.directHitDamage,
+                                <button data-tip={btnAbilityDescriptions.DH} 
+                                onClick={()=>damageCalculation(Bastion.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.abilityThree.directHitDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DH
                                     </button>
-                                <button onClick={()=>damageCalculation(Bastion.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.abilityThree.splashDamage,
+                                <button data-tip={btnAbilityDescriptions.S} 
+                                onClick={()=>damageCalculation(Bastion.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Bastion.abilityThree.splashDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     S
                                     </button>
@@ -83,7 +91,7 @@ const BastionPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>  
                 
             </div>);
 

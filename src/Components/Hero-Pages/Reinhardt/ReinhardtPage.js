@@ -6,7 +6,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const ReinhardtPage =(props)=>{
@@ -50,11 +51,13 @@ const ReinhardtPage =(props)=>{
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Reinhardt.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.abilityOne.bumpDamage,
+                                <button data-tip={btnAbilityDescriptions.B}
+                                onClick={()=>damageCalculation(Reinhardt.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.abilityOne.bumpDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     B
                                     </button>
-                                <button onClick={()=>damageCalculation(Reinhardt.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.abilityOne.pinDamage,
+                                <button data-tip={btnAbilityDescriptions.P}
+                                onClick={()=>damageCalculation(Reinhardt.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.abilityOne.pinDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     P
                                     </button>
@@ -77,7 +80,7 @@ const ReinhardtPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

@@ -2,7 +2,14 @@ import roundToX from '../roundToX';
 
 
 //Stands for damage calculation beam type damage. Beam type damage does 20% less against armor. So each 1 damage would do .8 damage instead against armor
-//
+/*Heroes that use this type of damage are as follow:
+Beam-type damage reduced by 20% when hitting armor
+Mei: Primary Fire
+Moira: Alternate Fire, Coalescence
+Symmetra: Primary Fire, Sentry Turret
+Winston: Primary Fire
+Zarya: Primary Fire
+*/
 const damageCalculationBTD = (abilityName,setAbilitySummary,setArmor,setHealth,armor,health,damage, headShotModifier = 1, discordModifier = 1,...amplifiers) => {
     
     let damageAmplifier = amplifiers.reduce((totalAmp, currAmp) => totalAmp + currAmp, 0)

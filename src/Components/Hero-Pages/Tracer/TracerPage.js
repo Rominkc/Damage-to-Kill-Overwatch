@@ -7,7 +7,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const TracerPage =(props)=>{
@@ -43,25 +44,30 @@ const TracerPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Tracer.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.primaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMn}
+                                onClick={()=>damageCalculationDPS(Tracer.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.primaryFire.minDamage,
                                     Tracer.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMn
                                     </button>
-                                <button onClick={()=>damageCalculationDPS(Tracer.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.primaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMx}
+                                onClick={()=>damageCalculationDPS(Tracer.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.primaryFire.maxDamage,
                                     Tracer.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMx
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Tracer.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.abilityThree.stickDamage,
+                                <button data-tip={btnAbilityDescriptions.Stick}
+                                onClick={()=>damageCalculation(Tracer.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.abilityThree.stickDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Stick
                                     </button>
-                                <button onClick={()=>damageCalculation(Tracer.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.abilityThree.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Tracer.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.abilityThree.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Tracer.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.abilityThree.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Tracer.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Tracer.abilityThree.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mx
                                     </button>
@@ -78,7 +84,7 @@ const TracerPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

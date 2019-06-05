@@ -6,7 +6,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const SombraPage =(props)=>{
@@ -41,11 +42,13 @@ const SombraPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Sombra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Sombra.primaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn} 
+                                onClick={()=>damageCalculation(Sombra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Sombra.primaryFire.minDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Sombra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Sombra.primaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Sombra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Sombra.primaryFire.maxDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
@@ -62,7 +65,7 @@ const SombraPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

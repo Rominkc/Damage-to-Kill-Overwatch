@@ -47,7 +47,9 @@ const Ashe = {
         abilityTwo:{
                         doesDamage:true,
                         canHeadshot:false,
+                        //	6 per pellet, 90 per shot
                         damage:90,
+                        pPerShot:15,
                         name:'Coach Gun'
                     },
             // 'q'|ultimate ability

@@ -6,6 +6,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -41,11 +43,13 @@ const BaptistePage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Baptiste.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Baptiste.primaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Baptiste.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Baptiste.primaryFire.minDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Baptiste.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Baptiste.primaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx} 
+                                onClick={()=>damageCalculation(Baptiste.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Baptiste.primaryFire.maxDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
@@ -63,7 +67,7 @@ const BaptistePage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>   
                 
             </div>);
 

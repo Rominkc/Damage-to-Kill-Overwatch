@@ -7,7 +7,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const ReaperPage =(props)=>{
@@ -44,17 +45,20 @@ const ReaperPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Reaper.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Reaper.primaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMn}
+                                onClick={()=>damageCalculationDPS(Reaper.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Reaper.primaryFire.minDamage,
                                     Reaper.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
-                                    MnDPS
+                                    DPSMn
                                     </button>
-                                <button onClick={()=>damageCalculationDPS(Reaper.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Reaper.primaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMx}
+                                onClick={()=>damageCalculationDPS(Reaper.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Reaper.primaryFire.maxDamage,
                                     Reaper.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
-                                    MxDPS
+                                    DPSMx
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Reaper.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Reaper.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationDPS(Reaper.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Reaper.abilityThree.damage,
                                     Reaper.abilityThree.pPerSecond,undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DPS
                                     </button>
@@ -71,7 +75,7 @@ const ReaperPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

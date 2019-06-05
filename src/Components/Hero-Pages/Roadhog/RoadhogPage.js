@@ -7,7 +7,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const RoadhogPage =(props)=>{
@@ -45,25 +46,30 @@ const RoadhogPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Roadhog.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.primaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMn}
+                                onClick={()=>damageCalculationDPS(Roadhog.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.primaryFire.minDamage,
                                     Roadhog.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMn
                                     </button>
-                                <button onClick={()=>damageCalculationDPS(Roadhog.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.primaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMx}
+                                onClick={()=>damageCalculationDPS(Roadhog.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.primaryFire.maxDamage,
                                     Roadhog.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMx
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Roadhog.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.secondaryFire.preDetonationDamage,
+                                <button data-tip={btnAbilityDescriptions.PreD}
+                                onClick={()=>damageCalculation(Roadhog.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.secondaryFire.preDetonationDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     PreD
                                     </button>
-                                <button onClick={()=>damageCalculationDPS(Roadhog.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.secondaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMn}
+                                onClick={()=>damageCalculationDPS(Roadhog.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.secondaryFire.minDamage,
                                     Roadhog.secondaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMn
                                     </button>
-                                <button onClick={()=>damageCalculationDPS(Roadhog.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.secondaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMx}
+                                onClick={()=>damageCalculationDPS(Roadhog.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.secondaryFire.maxDamage,
                                     Roadhog.secondaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMx
                                     </button>
@@ -75,7 +81,8 @@ const RoadhogPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Roadhog.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationDPS(Roadhog.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.abilityThree.damage,
                                     Roadhog.abilityThree.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DPS
                                     </button>
@@ -92,7 +99,7 @@ const RoadhogPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

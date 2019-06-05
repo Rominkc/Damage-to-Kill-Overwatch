@@ -7,7 +7,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const TorbjörnPage =(props)=>{
@@ -52,11 +53,13 @@ const TorbjörnPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Torbjörn.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Torbjörn.secondaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMn}
+                                onClick={()=>damageCalculationDPS(Torbjörn.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Torbjörn.secondaryFire.minDamage,
                                     Torbjörn.secondaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMn
                                     </button>
-                                <button onClick={()=>damageCalculationDPS(Torbjörn.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Torbjörn.secondaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMx} 
+                                onClick={()=>damageCalculationDPS(Torbjörn.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Torbjörn.secondaryFire.maxDamage,
                                     Torbjörn.secondaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMx
                                     </button>
@@ -68,13 +71,15 @@ const TorbjörnPage =(props)=>{
                                     </button>
                             </li>    
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Torbjörn.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Torbjörn.abilityOne.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationDPS(Torbjörn.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Torbjörn.abilityOne.damage,
                                     Torbjörn.abilityOne.pPerShot,undefined,discordModifier,matrixAmp)}>
                                     DPS
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Torbjörn.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Torbjörn.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS} 
+                                onClick={()=>damageCalculation(Torbjörn.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Torbjörn.abilityThree.damage,
                                     undefined,discordModifier)}>
                                     DPS
                                     </button>
@@ -91,7 +96,7 @@ const TorbjörnPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

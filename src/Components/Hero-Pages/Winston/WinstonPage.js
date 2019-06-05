@@ -7,7 +7,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const WinstonPage =(props)=>{
@@ -44,21 +45,25 @@ const WinstonPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Winston.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.primaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationBTD(Winston.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.primaryFire.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Winston.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.abilityOne.jumpDamage,
+                                <button data-tip={btnAbilityDescriptions.Jump} 
+                                onClick={()=>damageCalculation(Winston.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.abilityOne.jumpDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Jump
                                     </button>
-                                <button onClick={()=>damageCalculation(Winston.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.abilityOne.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn} 
+                                onClick={()=>damageCalculation(Winston.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.abilityOne.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Winston.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.abilityOne.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx} 
+                                onClick={()=>damageCalculation(Winston.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.abilityOne.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
@@ -81,7 +86,7 @@ const WinstonPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

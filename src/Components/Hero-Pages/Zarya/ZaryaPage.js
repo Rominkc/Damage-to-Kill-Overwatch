@@ -8,7 +8,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 
 //CSS for this component is the basis for all other css for page components
@@ -47,31 +48,37 @@ const ZaryaPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Zarya.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.primaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS} 
+                                onClick={()=>damageCalculationBTD(Zarya.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.primaryFire.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Zarya.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.secondaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                 onClick={()=>damageCalculation(Zarya.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.secondaryFire.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Zarya.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.secondaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx} 
+                                onClick={()=>damageCalculation(Zarya.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.secondaryFire.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mx
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.impactDamage,
+                                <button data-tip={btnAbilityDescriptions.Imp} 
+                                onClick={()=>damageCalculation(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.impactDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Imp
                                     </button>
-                                <button onClick={()=>damageCalculationDoT(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.damagePerSecond,
+                                <button data-tip={btnAbilityDescriptions.DPS} 
+                                onClick={()=>damageCalculationDoT(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.damagePerSecond,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DPS
                                     </button>
-                                <button onClick={()=>damageCalculationDoT(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.damageOverTime,
+                                <button data-tip={btnAbilityDescriptions.DoT} 
+                                onClick={()=>damageCalculationDoT(Zarya.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Zarya.abilityThree.damageOverTime,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DoT
                                     </button>
@@ -88,7 +95,7 @@ const ZaryaPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

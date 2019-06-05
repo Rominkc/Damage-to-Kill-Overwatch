@@ -6,7 +6,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const JunkratPage =(props)=>{
@@ -45,25 +46,30 @@ const JunkratPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Junkrat.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.primaryFire.directHitDamage,
+                                <button data-tip={btnAbilityDescriptions.DH}
+                                onClick={()=>damageCalculation(Junkrat.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.primaryFire.directHitDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DH
                                     </button>
-                                <button onClick={()=>damageCalculation(Junkrat.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.primaryFire.minSplashDamage,
+                                <button data-tip={btnAbilityDescriptions.SMn}
+                                onClick={()=>damageCalculation(Junkrat.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.primaryFire.minSplashDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
-                                    Mn
+                                    SMn
                                     </button>
-                                <button onClick={()=>damageCalculation(Junkrat.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.primaryFire.maxSplashDamage,
+                                <button data-tip={btnAbilityDescriptions.SMx}
+                                onClick={()=>damageCalculation(Junkrat.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.primaryFire.maxSplashDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
-                                    Mx
+                                    SMx
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Junkrat.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityOne.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Junkrat.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityOne.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Junkrat.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityOne.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Junkrat.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityOne.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mx
                                     </button>
@@ -75,11 +81,13 @@ const JunkratPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Junkrat.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityThree.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Junkrat.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityThree.minDamage,
                                     undefined,discordModifier)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Junkrat.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityThree.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Junkrat.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityThree.maxDamage,
                                     undefined,discordModifier)}>
                                     Mx
                                     </button>
@@ -102,7 +110,7 @@ const JunkratPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

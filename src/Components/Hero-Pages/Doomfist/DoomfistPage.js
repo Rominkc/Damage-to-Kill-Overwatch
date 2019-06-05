@@ -7,6 +7,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -46,41 +48,49 @@ const DoomfistPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationDPS(Doomfist.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.primaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMn}
+                                onClick={()=>damageCalculationDPS(Doomfist.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.primaryFire.minDamage,
                                     Doomfist.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMn
                                     </button>
-                                <button onClick={()=>damageCalculationDPS(Doomfist.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.primaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.DPShMx}
+                                onClick={()=>damageCalculationDPS(Doomfist.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.primaryFire.maxDamage,
                                     Doomfist.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DPSMx
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.minChargeDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn} 
+                                onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.minChargeDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.maxChargeDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.maxChargeDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.minWallImpactDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                 onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.minWallImpactDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.maxWallImpactDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.maxWallImpactDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Doomfist.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityOne.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn} 
+                                onClick={()=>damageCalculation(Doomfist.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityOne.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Doomfist.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityOne.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Doomfist.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityOne.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
@@ -92,15 +102,18 @@ const DoomfistPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Doomfist.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityThree.innerRingDamage,
+                                <button data-tip={btnAbilityDescriptions.Inr}
+                                 onClick={()=>damageCalculation(Doomfist.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityThree.innerRingDamage,
                                     undefined,discordModifier,nanoBoostAmp)}>
                                     Inr
                                     </button>
-                                <button onClick={()=>damageCalculation(Doomfist.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityThree.minOuterRingDamage,
+                                <button data-tip={btnAbilityDescriptions.OMn} 
+                                onClick={()=>damageCalculation(Doomfist.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityThree.minOuterRingDamage,
                                     undefined,discordModifier,nanoBoostAmp)}>
                                     OMn
                                     </button>
-                                <button onClick={()=>damageCalculation(Doomfist.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityThree.maxOuterRingDamage,
+                                <button data-tip={btnAbilityDescriptions.OMx} 
+                                onClick={()=>damageCalculation(Doomfist.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityThree.maxOuterRingDamage,
                                     undefined,discordModifier,nanoBoostAmp)}>
                                     OMx
                                     </button>
@@ -117,7 +130,7 @@ const DoomfistPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>  
                 
             </div>);
 

@@ -6,6 +6,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -43,11 +45,13 @@ const DVaPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(DVa.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.primaryFire.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                 onClick={()=>damageCalculation(DVa.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.primaryFire.minDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(DVa.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.primaryFire.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(DVa.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.primaryFire.maxDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
@@ -59,25 +63,30 @@ const DVaPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(DVa.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityTwo.directHitDamage,
+                                <button data-tip={btnAbilityDescriptions.DH} 
+                                onClick={()=>damageCalculation(DVa.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityTwo.directHitDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DH
                                     </button>
-                                <button onClick={()=>damageCalculation(DVa.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityTwo.minSplashDamage,
+                                <button data-tip={btnAbilityDescriptions.SMn}
+                                onClick={()=>damageCalculation(DVa.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityTwo.minSplashDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     SMn
                                     </button>
-                                <button onClick={()=>damageCalculation(DVa.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityTwo.maxSplashDamage,
+                                <button data-tip={btnAbilityDescriptions.SMx}
+                                onClick={()=>damageCalculation(DVa.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityTwo.maxSplashDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     SMx
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(DVa.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityThree.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(DVa.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityThree.minDamage,
                                     undefined,discordModifier)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(DVa.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityThree.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(DVa.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityThree.maxDamage,
                                     undefined,discordModifier)}>
                                     Mx
                                     </button>
@@ -94,7 +103,7 @@ const DVaPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

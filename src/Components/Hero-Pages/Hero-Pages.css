@@ -45,6 +45,7 @@ margin-right: 3px;
     background-color: tomato;
     border: solid brown .5px;
     padding: 0px .5px;
+    cursor: pointer;
     
 }
 .hero-abilities{
@@ -70,6 +71,9 @@ margin-right: 3px;
     padding: 0;
 }
 /* Amplified Button active animation and styles */
+label{
+    cursor: pointer;	
+}
 .amplification-buttons{
     margin-top:20px;
     display: block;
@@ -105,7 +109,10 @@ margin-right: 3px;
     transition-duration:.5s;
     opacity:0;
   }
-
+  /*Button tool tip class */
+  .react-tool-tip-btn{
+    font-family: 'Righteous', cursive;
+  }
   /* Media Queries */
   @media screen and (min-width: 768px){
     .ability-summary{
@@ -127,4 +134,5 @@ margin-right: 3px;
         display:grid;
         grid-template-columns: 2fr 2fr;
     }
+
 }

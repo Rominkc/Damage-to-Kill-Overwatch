@@ -1,6 +1,15 @@
 import roundToX from '../roundToX';   
 //Overwatch changed it so DoT abilities do the same amount of damage for armor and health, so the only checks that need to be made is if the target has armor or not
-
+/*Heroes that use this type of damage are as follows:
+Damage over time effects no longer mitigated by armor
+Ana: Primary Fire
+Ashe: Dynamite
+Hanzo: Dragonstrike
+Mei: Blizzard
+Moira: Biotic Orb
+Widowmaker: Venom Mine
+Zarya: Graviton Surge
+*/
 
 const damageCalculationDoT = (abilityName,setAbilitySummary,setArmor,setHealth,armor,health,damage,headShotModifier = 1, discordModifier = 1,...amplifiers) => {
     

@@ -2,11 +2,14 @@ import React from 'react'
 import heroArray from '../../heroArray';
 import damageCalculation from '../../Damage-Calculations/damageCalculation';
 import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT'
+import damageCalculationDPS from '../../Damage-Calculations/damageCalculationDPS'
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -45,52 +48,62 @@ const AshePage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Ashe.primaryFireUnScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.primaryFireUnScoped.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Ashe.primaryFireUnScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.primaryFireUnScoped.minDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Ashe.primaryFireUnScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.primaryFireUnScoped.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx} 
+                                onClick={()=>damageCalculation(Ashe.primaryFireUnScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.primaryFireUnScoped.maxDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Ashe.primaryFireScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.primaryFireScoped.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn} 
+                                onClick={()=>damageCalculation(Ashe.primaryFireScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.primaryFireScoped.minDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Ashe.primaryFireScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.primaryFireScoped.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx} 
+                                onClick={()=>damageCalculation(Ashe.primaryFireScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.primaryFireScoped.maxDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Ashe.abilityOne.name+'(Explosion)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Ashe.abilityOne.name+'(Explosion)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Ashe.abilityOne.name+'(Explosion)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Ashe.abilityOne.name+'(Explosion)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mx
                                     </button>
-                                <button onClick={()=>damageCalculationDoT(Ashe.abilityOne.name + '(Burn)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.burnDamage,
+                                <button data-tip={btnAbilityDescriptions.DoT}
+                                 onClick={()=>damageCalculationDoT(Ashe.abilityOne.name + '(Burn)',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityOne.burnDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     DoT
                                     </button>
                                 
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Ashe.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityTwo.damage,
-                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
-                                    X
+                                <button data-tip={btnAbilityDescriptions.DPSh}
+                                onClick={()=>damageCalculationDPS(Ashe.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityTwo.damage,
+                                    Ashe.abilityTwo.pPerShot,undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
+                                    DPS
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Ashe.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityThree.chargeDamage,
+                                <button data-tip={btnAbilityDescriptions.CD} 
+                                onClick={()=>damageCalculation(Ashe.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityThree.chargeDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     CD
                                     </button>
-                                <button onClick={()=>damageCalculation(Ashe.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityThree.armCannonDamage,
+                                <button data-tip={btnAbilityDescriptions.ACD} 
+                                onClick={()=>damageCalculation(Ashe.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Ashe.abilityThree.armCannonDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     ACD
                                     </button>
@@ -108,7 +121,7 @@ const AshePage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>  
                 
             </div>);
 

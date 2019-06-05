@@ -6,7 +6,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const AnaPage =(props)=>{
@@ -43,26 +44,31 @@ const AnaPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Ana.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.primaryFire.directHitDamage,
+                                <button data-tip={btnAbilityDescriptions.DH}
+                                onClick={()=>damageCalculation(Ana.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.primaryFire.directHitDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DH
                                     </button>
-                                <button onClick={()=>damageCalculation(Ana.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.primaryFire.minSplashDamage,
+                                <button data-tip={btnAbilityDescriptions.SMn}
+                                onClick={()=>damageCalculation(Ana.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.primaryFire.minSplashDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     SMn
                                     </button>
-                                <button onClick={()=>damageCalculation(Ana.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.primaryFire.maxSplashDamage,
+                                <button data-tip={btnAbilityDescriptions.SMx}
+                                onClick={()=>damageCalculation(Ana.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.primaryFire.maxSplashDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     SMx
                                     </button>
                             </li>  
                           
                             <li>
-                                <button onClick={()=>damageCalculation(Ana.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.abilityThree.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Ana.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.abilityThree.minDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mn
                                     </button>
-                                 <button onClick={()=>damageCalculation(Ana.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.abilityThree.maxDamage,
+                                 <button data-tip={btnAbilityDescriptions.Mx}
+                                 onClick={()=>damageCalculation(Ana.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.abilityThree.maxDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     Mx
                                     </button>
@@ -79,7 +85,7 @@ const AnaPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

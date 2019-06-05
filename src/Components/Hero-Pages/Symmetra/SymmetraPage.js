@@ -7,7 +7,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
-
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -47,39 +48,46 @@ const SymmetraPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelOneDamage,
+                                <button data-tip={btnAbilityDescriptions.DPS} 
+                                onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelOneDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelTwoDamage,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelTwoDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelThreeDamage,
+                                <button data-tip={btnAbilityDescriptions.DPS} 
+                                onClick={()=>damageCalculationBTD(Symmetra.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.primaryFire.levelThreeDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Symmetra.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.secondaryFire.directHitDamage,
+                                <button data-tip={btnAbilityDescriptions.DH} 
+                                onClick={()=>damageCalculation(Symmetra.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.secondaryFire.directHitDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     DH
                                     </button>
-                                <button onClick={()=>damageCalculation(Symmetra.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.secondaryFire.minSplashDamage,
+                                <button data-tip={btnAbilityDescriptions.SMn} 
+                                onClick={()=>damageCalculation(Symmetra.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.secondaryFire.minSplashDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     SMn
                                     </button>
-                                <button onClick={()=>damageCalculation(Symmetra.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.secondaryFire.maxSplashDamage,
+                                <button data-tip={btnAbilityDescriptions.SMx} 
+                                onClick={()=>damageCalculation(Symmetra.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.secondaryFire.maxSplashDamage,
                                     undefined,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     SMx
                                     </button>
                             </li>   
                             <li>
-                                <button onClick={()=>damageCalculationBTD(Symmetra.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.abilityOne.damage,
+                                <button data-tip={btnAbilityDescriptions.DPS} 
+                                onClick={()=>damageCalculationBTD(Symmetra.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Symmetra.abilityOne.damage,
                                     undefined,discordModifier)}>
                                     DPS
                                     </button>
@@ -96,7 +104,7 @@ const SymmetraPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 

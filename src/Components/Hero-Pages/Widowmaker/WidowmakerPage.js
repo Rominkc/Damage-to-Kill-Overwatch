@@ -7,6 +7,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const WidowmakerPage =(props)=>{
@@ -43,21 +45,25 @@ const WidowmakerPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Widowmaker.primaryFireScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.primaryFireScoped.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Widowmaker.primaryFireScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.primaryFireScoped.minDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Widowmaker.primaryFireScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.primaryFireScoped.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Widowmaker.primaryFireScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.primaryFireScoped.maxDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Widowmaker.primaryFireUnScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.primaryFireUnScoped.minDamage,
+                                <button data-tip={btnAbilityDescriptions.Mn}
+                                onClick={()=>damageCalculation(Widowmaker.primaryFireUnScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.primaryFireUnScoped.minDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
-                                <button onClick={()=>damageCalculation(Widowmaker.primaryFireUnScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.primaryFireUnScoped.maxDamage,
+                                <button data-tip={btnAbilityDescriptions.Mx}
+                                onClick={()=>damageCalculation(Widowmaker.primaryFireUnScoped.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.primaryFireUnScoped.maxDamage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
@@ -65,11 +71,13 @@ const WidowmakerPage =(props)=>{
                               
                             
                             <li>
-                                <button onClick={()=>damageCalculationDoT(Widowmaker.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.abilityTwo.damagePerSecond,
+                                <button data-tip={btnAbilityDescriptions.DPS}
+                                onClick={()=>damageCalculationDoT(Widowmaker.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.abilityTwo.damagePerSecond,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DPS
                                     </button>
-                                <button onClick={()=>damageCalculationDoT(Widowmaker.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.abilityTwo.damageOverTime,
+                                <button data-tip={btnAbilityDescriptions.DoT}
+                                onClick={()=>damageCalculationDoT(Widowmaker.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Widowmaker.abilityTwo.damageOverTime,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     DoT
                                     </button>
@@ -86,7 +94,7 @@ const WidowmakerPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                   
+                <BtnReactToolTip/>
                 
             </div>);
 
