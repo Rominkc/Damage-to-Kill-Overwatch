@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import MysteryHero from '../Heroes/MysteryHero';
+import MysteryHero from '../Hero-Data/MysteryHero';
 //Custom hook which creates state hooks for a 'hero page'
 //Created mainly to export some of the code complexity from each 'hero page'
 const useHeroPageInfo = () =>{

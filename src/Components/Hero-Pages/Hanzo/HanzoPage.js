@@ -71,7 +71,8 @@ const HanzoPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Hanzo.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Hanzo.abilityTwo.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Hanzo.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Hanzo.abilityTwo.damage,
                                     headShotModifier,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     X
                                     </button>
@@ -89,7 +90,8 @@ const HanzoPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Hanzo.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Hanzo.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

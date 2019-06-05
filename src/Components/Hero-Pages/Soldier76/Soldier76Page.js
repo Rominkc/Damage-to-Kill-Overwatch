@@ -85,7 +85,8 @@ const Soldier76Page =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Soldier76.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Soldier76.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

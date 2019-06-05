@@ -45,7 +45,8 @@ const ReinhardtPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Reinhardt.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.primaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Reinhardt.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.primaryFire.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
@@ -63,13 +64,15 @@ const ReinhardtPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Reinhardt.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.abilityTwo.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Reinhardt.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.abilityTwo.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     X
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Reinhardt.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Reinhardt.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Reinhardt.abilityThree.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>

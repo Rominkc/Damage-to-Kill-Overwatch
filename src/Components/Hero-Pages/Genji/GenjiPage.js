@@ -6,6 +6,8 @@ import useHeroPageInfo from '../../useHeroPageInfo'
 import AmplificationButtons from '../../AmplificationButtons';
 import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
+import btnAbilityDescriptions from '../btnAbilityDescriptions';
+import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
 
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
@@ -44,31 +46,36 @@ const GenjiPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
-                                <button onClick={()=>damageCalculation(Genji.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Genji.primaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Genji.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Genji.primaryFire.damage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
                             </li> 
                             <li>
-                                <button onClick={()=>damageCalculation(Genji.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Genji.secondaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Genji.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Genji.secondaryFire.damage,
                                     headShotModifier,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     X
                                     </button>
                             </li> 
                             <li>
-                                <button onClick={()=>damageCalculation(Genji.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Genji.abilityOne.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Genji.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Genji.abilityOne.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Genji.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Genji.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Genji.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Genji.abilityThree.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Genji.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Genji.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>
@@ -79,7 +86,7 @@ const GenjiPage =(props)=>{
                 <HeroPageKillHero killHero={killHero} health={health} armor={armor} />
                 <AbilitySummary abilitySummary={abilitySummary}/>
                 <KillHeroList setKillHero={setKillHero} setHealth={setHealth} setArmor={setArmor} setAbilitySummary={setAbilitySummary}/>
-                 
+                <BtnReactToolTip/>
                 
             </div>);
 

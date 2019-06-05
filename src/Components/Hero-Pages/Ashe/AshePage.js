@@ -110,7 +110,8 @@ const AshePage =(props)=>{
 
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Ashe.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>

@@ -69,13 +69,15 @@ const WinstonPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Winston.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Winston.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Winston.abilityThree.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Winston.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Winston.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

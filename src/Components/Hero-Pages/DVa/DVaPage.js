@@ -57,7 +57,8 @@ const DVaPage =(props)=>{
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(DVa.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityOne.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(DVa.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,DVa.abilityOne.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
@@ -92,7 +93,8 @@ const DVaPage =(props)=>{
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,DVa.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,DVa.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

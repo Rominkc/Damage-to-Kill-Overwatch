@@ -54,7 +54,8 @@ const MeiPage =(props)=>{
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Mei.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.secondaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Mei.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Mei.secondaryFire.damage,
                                     headShotModifier,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     X
                                     </button>
@@ -67,7 +68,8 @@ const MeiPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Mei.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Mei.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

@@ -75,7 +75,8 @@ const RoadhogPage =(props)=>{
                                     </button>
                             </li>    
                             <li>
-                                <button onClick={()=>damageCalculation(Roadhog.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.abilityOne.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Roadhog.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.abilityOne.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
@@ -88,7 +89,8 @@ const RoadhogPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Roadhog.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

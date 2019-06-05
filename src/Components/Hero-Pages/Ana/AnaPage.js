@@ -53,19 +53,22 @@ const AnaPage =(props)=>{
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Ana.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.abilityOne.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Ana.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.abilityOne.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     X
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Ana.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.abilityTwo.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Ana.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Ana.abilityTwo.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     X
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Ana.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Ana.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

@@ -75,7 +75,8 @@ const JunkratPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Junkrat.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityTwo.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Junkrat.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.abilityTwo.damage,
                                     undefined,discordModifier)}>
                                     X
                                     </button>
@@ -93,13 +94,15 @@ const JunkratPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Junkrat.passive.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.passive.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Junkrat.passive.name,setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.passive.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
                                     X
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Junkrat.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

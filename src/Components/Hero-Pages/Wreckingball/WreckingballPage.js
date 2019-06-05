@@ -57,7 +57,8 @@ const WreckingballPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Wreckingball.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Wreckingball.secondaryFire.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Wreckingball.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Wreckingball.secondaryFire.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
@@ -75,13 +76,15 @@ const WreckingballPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation(Wreckingball.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Wreckingball.abilityThree.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Wreckingball.abilityThree.name,setAbilitySummary,setArmor,setHealth,armor,health,Wreckingball.abilityThree.damage,
                                     undefined,discordModifier)}>
                                     X
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Wreckingball.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Wreckingball.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

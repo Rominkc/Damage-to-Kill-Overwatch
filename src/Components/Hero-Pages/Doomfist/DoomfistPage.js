@@ -96,7 +96,8 @@ const DoomfistPage =(props)=>{
                                     </button>
                             </li>  
                             <li>
-                                <button onClick={()=>damageCalculation(Doomfist.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityTwo.damage,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation(Doomfist.abilityTwo.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.abilityTwo.damage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
@@ -119,7 +120,8 @@ const DoomfistPage =(props)=>{
                                     </button>
                             </li>
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.melee,
                                     headShotModifier,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X 
                                     </button>

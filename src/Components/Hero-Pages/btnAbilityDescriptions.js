@@ -27,6 +27,7 @@ const btnAbilityDescriptions = {
     Stick:"Damage from pulse bomb sticking to target",
     Jump:"Damage from Winston's initial jump",
     Imp:"Impact damage from Graviton Surge",
+    X:"Flat base damage single hit ability "
 }
 
 export default btnAbilityDescriptions;

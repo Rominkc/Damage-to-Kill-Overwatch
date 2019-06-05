@@ -56,7 +56,8 @@ const BaptistePage =(props)=>{
                             </li>  
                           
                             <li>
-                                <button onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Baptiste.melee,
+                                <button data-tip={btnAbilityDescriptions.X}
+                                 onClick={()=>damageCalculation('Melee',setAbilitySummary,setArmor,setHealth,armor,health,Baptiste.melee,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
