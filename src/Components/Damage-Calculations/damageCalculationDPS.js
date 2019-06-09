@@ -14,7 +14,7 @@ const damageCalculationDPS = (abilityName,setAbilitySummary,setArmor,setHealth,a
     damageAmplifier += 1
     damageAmplifier = damageAmplifier * discordModifier * headShotModifier
     
-    console.log(damageAmplifier)
+    //console.log(damageAmplifier)
     damage = roundToX(damage * damageAmplifier,2)
     const damagePerProjectile = damage / pPerS
 
@@ -74,7 +74,7 @@ const damageCalculationDPS = (abilityName,setAbilitySummary,setArmor,setHealth,a
         :roundToX((damage-(pPerS*3)),2) 
 
         const damageAmpToPercent = roundToX(((damageAmplifier-1)*100),2)
-       
+        const displayDamage = damage //damage > health && armor === 0 ? health :damage
         const updatedAbilitySummary = health === 0 ? prevAbilitySummary
        
         :damageAmplifier === 1 && prevAbilitySummary==='' && armor > 0 ? prevAbilitySummary+ `${abilityName} did ${adjustedDamage} damage`
@@ -82,10 +82,10 @@ const damageCalculationDPS = (abilityName,setAbilitySummary,setArmor,setHealth,a
         :damageAmplifier === 1 && armor > 0 ? prevAbilitySummary+ ` => ${abilityName} did ${adjustedDamage} damage`
         :damageAmplifier > 1 && armor > 0 ? prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${adjustedDamage} damage`
        
-        :damageAmplifier === 1 && prevAbilitySummary==='' ? prevAbilitySummary+ `${abilityName} did ${damage} damage`
-        :damageAmplifier > 1 && prevAbilitySummary==='' ? prevAbilitySummary + `${abilityName} was amplified by +${damageAmpToPercent}% and did ${damage} damage`
-        :damageAmplifier === 1 ? prevAbilitySummary+ ` => ${abilityName} did ${damage} damage`
-        :prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${damage} damage`;
+        :damageAmplifier === 1 && prevAbilitySummary==='' ? prevAbilitySummary+ `${abilityName} did ${displayDamage} damage`
+        :damageAmplifier > 1 && prevAbilitySummary==='' ? prevAbilitySummary + `${abilityName} was amplified by +${damageAmpToPercent}% and did ${displayDamage} damage`
+        :damageAmplifier === 1 ? prevAbilitySummary+ ` => ${abilityName} did ${displayDamage} damage`
+        :prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${displayDamage} damage`;
 
         return(updatedAbilitySummary) })
 }

@@ -19,7 +19,7 @@ const MoiraPage =(props)=>{
 // eslint-disable-next-line
     const [headShotModifier,setHeadShotModifier,
         discordModifier,setDiscordModifier,
-        nanoBoostAmp,setNanoBoostAmp,
+        nanoBoostAmp,setNanoBoostAmp,// eslint-disable-next-line
         matrixAmp,setMatrixAmp,
         superchargerAmp,setSuperchargerAmp,
         damageBoostAmp,setDamageBoostAmp,
@@ -56,12 +56,12 @@ const MoiraPage =(props)=>{
                             <li>
                                 <button data-tip={btnAbilityDescriptions.DoT}
                                 onClick={()=>damageCalculationDoT(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damageOverTime,
-                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
+                                    undefined,undefined)}>
                                     DoT
                                     </button>
                                 <button data-tip={btnAbilityDescriptions.DPS}
                                 onClick={()=>damageCalculationDoT(Moira.abilityOne.name,setAbilitySummary,setArmor,setHealth,armor,health,Moira.abilityOne.damagePerSecond,
-                                    undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp,matrixAmp)}>
+                                    undefined,undefined)}>
                                     DPS
                                     </button>
                             </li>

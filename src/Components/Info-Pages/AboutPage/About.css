@@ -1,0 +1,35 @@
+/*font-family: 'Permanent Marker', cursive;
+      font-family: 'Righteous', cursive;
+      font-family: 'Finger Paint', cursive;
+      font-family: 'Frijole', cursive;
+      font-family: 'Roboto', sans-serif;*/
+.about-general{
+ 
+    color: brown;
+    font-size: 3rem;
+   
+}
+.about-page{
+    font-family: 'Righteous', cursive;
+    font-family: 'Roboto', sans-serif;
+    color:brown;
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+   
+}
+#main-about{
+    grid-column: 2/12;
+}
+.about-content{
+    font-size:1.5rem;
+}
+
+@media screen and (min-width: 768px){
+    #main-about{
+        grid-column: 4/10;
+    }
+    .about-content{
+        font-size:2rem;
+    }
+    
+}

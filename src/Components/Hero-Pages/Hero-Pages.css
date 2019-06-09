@@ -5,7 +5,7 @@
 .hero-page-container{
     display:grid;
     grid-template-columns: 3.5fr 2.5fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: max-content max-content;
 }
 .hero-page-selected-hero{
     display: grid;

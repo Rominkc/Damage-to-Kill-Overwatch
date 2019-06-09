@@ -2,8 +2,11 @@
     font-family: 'Permanent Marker', cursive;
     color: brown;
     font-size: 1.5rem;
-    margin-left: 50px;
-    margin-right: 50px;
+}
+.header-dmg2kOW span{
+    display: inline-block;
+    margin-top:2.5rem;
+    margin-left:20px;
 }
 .header-link-dmg2kOW{
     text-decoration: none;
@@ -18,7 +21,10 @@
 @media screen and (min-width: 768px){
     .header-dmg2kOW{
         font-size: 3rem;
-        margin-right: 50px;
+       /* margin-right: 50px; */
+    }
+    .header-dmg2kOW span{
+        margin-left:50px;
     }
     
 }

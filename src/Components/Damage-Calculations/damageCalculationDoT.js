@@ -17,7 +17,7 @@ const damageCalculationDoT = (abilityName,setAbilitySummary,setArmor,setHealth,a
     let damageAmplifier = amplifiers.reduce((totalAmp, currAmp) => totalAmp + currAmp, 0)
     damageAmplifier += 1
     damageAmplifier = damageAmplifier * discordModifier * headShotModifier
-    console.log(damageAmplifier)
+    //console.log(damageAmplifier)
     damage = roundToX(damage * damageAmplifier,2)
   
     const carryOverDamageCalcDoT =()=> {
@@ -37,13 +37,14 @@ const damageCalculationDoT = (abilityName,setAbilitySummary,setArmor,setHealth,a
 
         //convert damagAmplifier to percentage value
         const damageAmpToPercent = roundToX(((damageAmplifier-1)*100),2)
+        const displayDamage = damage //damage > health && armor === 0 ? health :damage
         //check if hero is dead but leave ability summary the same unless a new hero is clicked
         const updatedAbilitySummary = health === 0 ? prevAbilitySummary
         //4 cases check for amplification against health or armor as it does the same damage against either unlike other abilities damage calculations
-        :damageAmplifier === 1 && prevAbilitySummary==='' ? prevAbilitySummary+ `${abilityName} did ${damage} damage`
-        :damageAmplifier > 1 && prevAbilitySummary==='' ? prevAbilitySummary + `${abilityName} was amplified by +${damageAmpToPercent}% and did ${damage} damage`
-        :damageAmplifier === 1 ? prevAbilitySummary+ ` => ${abilityName} did ${damage} damage`
-        :prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${damage} damage`;
+        :damageAmplifier === 1 && prevAbilitySummary==='' ? prevAbilitySummary+ `${abilityName} did ${displayDamage} damage`
+        :damageAmplifier > 1 && prevAbilitySummary==='' ? prevAbilitySummary + `${abilityName} was amplified by +${damageAmpToPercent}% and did ${displayDamage} damage`
+        :damageAmplifier === 1 ? prevAbilitySummary+ ` => ${abilityName} did ${displayDamage} damage`
+        :prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${displayDamage} damage`;
 
         return(updatedAbilitySummary) })
 }

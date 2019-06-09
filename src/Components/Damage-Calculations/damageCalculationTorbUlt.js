@@ -10,7 +10,7 @@ const damageCalculationTorbUlt= (abilityName,setAbilitySummary,setArmor,setHealt
     damageAmplifier += 1
     damageAmplifier = damageAmplifier * discordModifier * headShotModifier
     
-    console.log(damageAmplifier)
+    //console.log(damageAmplifier)
     damage = roundToX(damage * damageAmplifier,2)
     const damagePPToArmor = 1.1875 // Damage per point(of damage) to armor  i.e 1 damage would do 1.1875 damage because torb's ult does more damage againsta rmor
 
@@ -81,7 +81,7 @@ const damageCalculationTorbUlt= (abilityName,setAbilitySummary,setArmor,setHealt
         :roundToX( damage * 1.1875 , 2 )
 
         const damageAmpToPercent = roundToX(((damageAmplifier-1)*100),2)
-       
+        const displayDamage = damage //damage > health && armor === 0 ? health :damage
         const updatedAbilitySummary = health === 0 ? prevAbilitySummary
        
         :damageAmplifier === 1 && prevAbilitySummary==='' && armor > 0 ? prevAbilitySummary+ `${abilityName} did ${adjustedDamage} damage`
@@ -89,10 +89,10 @@ const damageCalculationTorbUlt= (abilityName,setAbilitySummary,setArmor,setHealt
         :damageAmplifier === 1 && armor > 0 ? prevAbilitySummary+ ` => ${abilityName} did ${adjustedDamage} damage`
         :damageAmplifier > 1 && armor > 0 ? prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${adjustedDamage} damage`
        
-        :damageAmplifier === 1 && prevAbilitySummary==='' ? prevAbilitySummary+ `${abilityName} did ${damage} damage`
-        :damageAmplifier > 1 && prevAbilitySummary==='' ? prevAbilitySummary + `${abilityName} was amplified by +${damageAmpToPercent}% and did ${damage} damage`
-        :damageAmplifier === 1 ? prevAbilitySummary+ ` => ${abilityName} did ${damage} damage`
-        :prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${damage} damage`;
+        :damageAmplifier === 1 && prevAbilitySummary==='' ? prevAbilitySummary+ `${abilityName} did ${displayDamage} damage`
+        :damageAmplifier > 1 && prevAbilitySummary==='' ? prevAbilitySummary + `${abilityName} was amplified by +${damageAmpToPercent}% and did ${displayDamage} damage`
+        :damageAmplifier === 1 ? prevAbilitySummary+ ` => ${abilityName} did ${displayDamage} damage`
+        :prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${displayDamage} damage`;
 
         return(updatedAbilitySummary) })
 }

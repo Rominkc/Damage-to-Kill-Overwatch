@@ -1,0 +1,44 @@
+/*font-family: 'Permanent Marker', cursive;
+      font-family: 'Righteous', cursive;
+      font-family: 'Finger Paint', cursive;
+      font-family: 'Frijole', cursive;
+      font-family: 'Roboto', sans-serif;*/
+      .faq-general{
+ 
+        color: brown;
+        font-size: 3rem;
+       
+    }
+    .faq-page{
+        font-family: 'Righteous', cursive;
+        font-family: 'Roboto', sans-serif;
+        color:brown;
+        display:grid;
+        grid-template-columns: repeat(12,1fr);
+       
+    }
+    #main-faq{
+        grid-column: 2/12;
+    }
+    .faq-content{
+        font-size:1.5rem;
+    }
+    .faq-content p a {
+        text-decoration: none;
+        color: red;
+    }
+    .faq-content p a:active,.faq-content p a:hover {
+        color: white;
+    }
+    .faq-content ul {
+        list-style: none;
+        padding:0;
+    }
+    @media screen and (min-width: 768px){
+        #main-faq{
+            grid-column: 4/10;
+        }
+        .faq-content{
+            font-size:2rem;
+        }
+    }

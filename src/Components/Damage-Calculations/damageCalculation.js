@@ -23,7 +23,7 @@ const damageCalculation = (abilityName,setAbilitySummary,setArmor,setHealth,armo
     //Also adds .5 to headshotModifier if the ability is Widowmaker's scoped shot and the headshotModifier is active
     damageAmplifier = damageAmplifier * discordModifier * (abilityName ==="Widow's Kiss (Scope)" && headShotModifier === 2 ? headShotModifier +.5 : headShotModifier )
     //multiply damageAmplifier by base damage, and round number to three decimal places
-    console.log(damageAmplifier)
+    //console.log(damageAmplifier)
     damage = roundToX(damage * damageAmplifier,2)
   
     const carryOverDamageCalc =()=> {
@@ -53,6 +53,8 @@ const damageCalculation = (abilityName,setAbilitySummary,setArmor,setHealth,armo
         const adjustedDamage = damage > 6 ? roundToX(damage - 3,2) : roundToX(damage /  2 , 2);
         //convert damagAmplifier to percentage value
         const damageAmpToPercent = roundToX(((damageAmplifier-1)*100),2)
+        //if damage would overkill, make damage equal to health
+        const displayDamage = damage //damage > health && armor === 0 ? health :damage
         //check if hero is dead but leave ability summary the same unless a new hero is clicked
         const updatedAbilitySummary = health === 0 ? prevAbilitySummary
         //first two of each set of cases check if ability is first ability to be added to summary if it is ommit the '=>' from beginning
@@ -62,10 +64,10 @@ const damageCalculation = (abilityName,setAbilitySummary,setArmor,setHealth,armo
         :damageAmplifier === 1 && armor > 0 ? prevAbilitySummary+ ` => ${abilityName} did ${adjustedDamage} damage`
         :damageAmplifier > 1 && armor > 0 ? prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${adjustedDamage} damage`
         //4 cases check for amplification against health (so if target doesn't have armor, or armor has been depleted)
-        :damageAmplifier === 1 && prevAbilitySummary==='' ? prevAbilitySummary+ `${abilityName} did ${damage} damage`
-        :damageAmplifier > 1 && prevAbilitySummary==='' ? prevAbilitySummary + `${abilityName} was amplified by +${damageAmpToPercent}% and did ${damage} damage`
-        :damageAmplifier === 1 ? prevAbilitySummary+ ` => ${abilityName} did ${damage} damage`
-        :prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${damage} damage`;
+        :damageAmplifier === 1 && prevAbilitySummary==='' ? prevAbilitySummary+ `${abilityName} did ${displayDamage} damage`
+        :damageAmplifier > 1 && prevAbilitySummary==='' ? prevAbilitySummary + `${abilityName} was amplified by +${damageAmpToPercent}% and did ${displayDamage} damage`
+        :damageAmplifier === 1 ? prevAbilitySummary+ ` => ${abilityName} did ${displayDamage} damage`
+        :prevAbilitySummary + `  => ${abilityName} was amplified by +${damageAmpToPercent}% and did ${displayDamage} damage`;
 
         return(updatedAbilitySummary) })
 }

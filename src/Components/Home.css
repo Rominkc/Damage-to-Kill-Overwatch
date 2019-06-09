@@ -11,10 +11,10 @@
 .hero-list-wrapper{
     display: flex;
     justify-content: center;
-    margin-bottom:100px;
+    /*padding-bottom:150px;*/
 }
 .chosen-hero-img{
-    height:140px;
+    height:100px;
 }
 li img{
 width:50px;
