@@ -9,27 +9,27 @@ const AmplificationButtons = ({setHeadShotModifier,setDiscordModifier,setNanoBoo
         <ul className ="amplification-buttons">
             <li>
                 <input className={inputClassName} type="checkbox" id='cb1' onChange={()=>setHeadShotModifier((prevHeadShotModifier)=>prevHeadShotModifier === 1 ? headShotMultiplier : 1)}/>
-                <label htmlFor='cb1'>Headshot</label>
+                <label data-place="bottom" data-tip="Amplifies damage by 2 or 2.5 if the ability can headshot" htmlFor='cb1'>Headshot</label>
             </li>
             <li>
                 <input className={inputClassName} type="checkbox" id='cb2'  onChange={()=>setDiscordModifier((prevDiscordModifier)=>prevDiscordModifier === 1 ? 1.25 : 1)} />
-                <label htmlFor='cb2'>Discord</label>
+                <label data-place="bottom" data-tip="Amplifies the damage the target takes by 25%" htmlFor='cb2'>Discord</label>
             </li>
             <li>
-                <input className={inputClassName} type="checkbox" id='cb3'   onChange={()=>setNanoBoostAmp((prevDiscordModifier)=>prevDiscordModifier === 0 ? .5 : 0)}/>
-                <label htmlFor='cb3'>Nano Boost</label>
+                <input className={inputClassName} type="checkbox" id='cb3'   onChange={()=>setNanoBoostAmp((prevNanoBoostAmp)=>prevNanoBoostAmp === 0 ? .5 : 0)}/>
+                <label data-place="bottom" data-tip="Amplifies damage by 50% if the ability can be nano boosted" htmlFor='cb3'>Nano Boost</label>
             </li>   
             <li>
-                <input className={inputClassName} type="checkbox" id='cb4'  onChange={()=>setMatrixAmp((prevDiscordModifier)=>prevDiscordModifier === 0 ? 1 : 0)}/>
-                <label htmlFor='cb4'>Amplification Matrix</label>  
+                <input className={inputClassName} type="checkbox" id='cb4'  onChange={()=>setMatrixAmp((prevMatrixAmp)=>prevMatrixAmp === 0 ? 1 : 0)}/>
+                <label data-place="bottom" data-tip="Amplifies damage by 100% if the ability is affected by Amplficiation Matrix" htmlFor='cb4'>Amplification Matrix</label>  
             </li>
             <li>
-                <input className={inputClassName} type="checkbox" id='cb5'  onChange={()=>setSuperchargerAmp((prevDiscordModifier)=>prevDiscordModifier === 0 ? .5 : 0)}/>
-                <label htmlFor='cb5'>Supercharger</label>
+                <input className={inputClassName} type="checkbox" id='cb5'  onChange={()=>setSuperchargerAmp((prevSuperchargerAmp)=>prevSuperchargerAmp === 0 ? .5 : 0)}/>
+                <label data-place="bottom" data-tip="Amplifies damage by 50% if the ability can supercharged" htmlFor='cb5'>Supercharger</label>
             </li>
             <li>
-                <input className={inputClassName} type="checkbox" id='cb6'  onChange={()=>setDamageBoostAmp((prevDiscordModifier)=>prevDiscordModifier === 0 ? .3 : 0)}/>
-                <label htmlFor='cb6'> M. Damage Boost</label>
+                <input className={inputClassName} type="checkbox" id='cb6'  onChange={()=>setDamageBoostAmp((prevDamageBoostAmp)=>prevDamageBoostAmp === 0 ? .3 : 0)}/>
+                <label data-place="bottom" data-tip="Amplifies damage by 30% if the ability can be damage boosted" htmlFor='cb6'> M. Damage Boost</label>
             </li>
         </ul>
     )
