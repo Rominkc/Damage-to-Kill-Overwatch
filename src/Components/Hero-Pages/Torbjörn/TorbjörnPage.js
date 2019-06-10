@@ -35,7 +35,7 @@ const TorbjörnPage =(props)=>{
                     
                     <AmplificationButtons setHeadShotModifier={setHeadShotModifier}
                     setDiscordModifier={setDiscordModifier} setNanoBoostAmp={setNanoBoostAmp} 
-                    setMatrixAmp={setMatrixAmp} setSuperchargerAmp={setSuperchargerAmp} setDamageBoostAmp={setDamageBoostAmp} />
+                    setMatrixAmp={setMatrixAmp} setSuperchargerAmp={setSuperchargerAmp} setDamageBoostAmp={setDamageBoostAmp} canHeadShot={true}/>
 
                     <div className="hero-abilities">
                         <ul className="hero-abilities-ul">

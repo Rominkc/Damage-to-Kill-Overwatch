@@ -2,15 +2,15 @@ import React from 'react';
 //Component renders amplification buttons which are common between all 'hero page' components
 //Only thing that may differ is HeadshotMultiplier, if hero has no abilities that can headshot, input 1 as a paramater, else, you can leave out this attribute as it defaults to 2
 // this is last argument, can be changed from two if necessary (headShotMultiplier)  *note widow is only hero that has 2.5x headshot
-const AmplificationButtons = ({setHeadShotModifier,setDiscordModifier,setNanoBoostAmp,setMatrixAmp,setSuperchargerAmp,setDamageBoostAmp,headShotMultiplier = 2}) =>{
+const AmplificationButtons = ({setHeadShotModifier,setDiscordModifier,setNanoBoostAmp,setMatrixAmp,setSuperchargerAmp,setDamageBoostAmp,headShotMultiplier = 2,canHeadShot}) =>{
     const inputClassName='hidden';
 
     return(
         <ul className ="amplification-buttons">
-            <li>
+            {canHeadShot ? <li>
                 <input className={inputClassName} type="checkbox" id='cb1' onChange={()=>setHeadShotModifier((prevHeadShotModifier)=>prevHeadShotModifier === 1 ? headShotMultiplier : 1)}/>
                 <label data-place="bottom" data-tip="Amplifies damage by 2 or 2.5 if the ability can headshot" htmlFor='cb1'>Headshot</label>
-            </li>
+            </li>: null}
             <li>
                 <input className={inputClassName} type="checkbox" id='cb2'  onChange={()=>setDiscordModifier((prevDiscordModifier)=>prevDiscordModifier === 1 ? 1.25 : 1)} />
                 <label data-place="bottom" data-tip="Amplifies the damage the target takes by 25%" htmlFor='cb2'>Discord</label>

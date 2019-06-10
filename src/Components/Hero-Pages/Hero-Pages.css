@@ -58,7 +58,7 @@ margin-right: 3px;
     justify-content: center;
     max-width: 650px;
     justify-self: center;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Righteous', cursive;
     color: brown;
     font-size: 1.5rem;
 }
@@ -68,7 +68,7 @@ margin-right: 3px;
     max-width: 650px;
     font-family: 'Righteous', cursive;
     overflow: overlay;
-    padding: 0;
+    padding-right: 20px;
 }
 /* Amplified Button active animation and styles */
 label{
@@ -120,6 +120,7 @@ label{
     }
     .ability-summary > p{
         font-size:1.2rem;
+        max-height: 150px;
     }
     .hero-abilities-ul button{
         font-size:1rem;
