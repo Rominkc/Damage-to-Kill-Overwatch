@@ -5,7 +5,7 @@
     font-family: 'Frijole', cursive;
     font-family: 'Roboto', sans-serif;*/
 
-    color: brown;
+    color: white;
     font-size: 1.5rem;
 }
 .header-dmg2kOW span{
@@ -15,12 +15,12 @@
 }
 .header-link-dmg2kOW{
     text-decoration: none;
-    color: brown;
+    color: white;
     transition-duration: 250ms;
     transition-property: color; /*Specify for performance, Can be cpu intensive if you just leave it as "all" which is the default */
 }
 .header-link-dmg2kOW:hover{
-    color: red;
+    color: #f6ab26;
     
 }
 @media screen and (min-width: 768px){

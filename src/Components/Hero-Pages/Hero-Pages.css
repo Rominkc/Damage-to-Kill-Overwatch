@@ -42,8 +42,8 @@ margin-right: 3px;
     
     font-family: 'Righteous', cursive;
     font-size:.8rem;
-    background-color: tomato;
-    border: solid brown .5px;
+    background-color: #00BCD4;
+    border: solid #2196F3 .5px;
     padding: 0px .5px;
     cursor: pointer;
     
@@ -59,7 +59,7 @@ margin-right: 3px;
     max-width: 650px;
     justify-self: center;
     font-family: 'Righteous', cursive;
-    color: brown;
+    color: white;
     font-size: 1.5rem;
 }
 .ability-summary > p{
@@ -83,20 +83,20 @@ label{
 }
 .hero-page-selected-hero .amplification-buttons li {
     font-family: 'Righteous', cursive;
-    background-color: tomato;
+    background-color: #00BCD4;
     margin-bottom: 5px;
-    width:auto;
-    border: solid brown;
+    width: auto;
+    border: solid #2196F3;
     font-size: 1rem;
-    display:inline-block;
+    display: inline-block;
     margin-right: 1px;
 }
 
 
 @keyframes redPulse {
-    from { background-color: tomato; box-shadow: 0 0 9px #333; border-color:brown; color:yellow; }
-    50% { background-color: brown; box-shadow: 0 0 18px #bd0909;border-color:rgba(255, 255, 0, 0.144); color:white; }
-    to { background-color: tomato; box-shadow: 0 0 9px #333;border-color:brown; color:yellow; }
+    from { background-color: #03A9F4; box-shadow: 0 0 9px #333; border-color: #2196F3;color: yellow; }
+    50% { background-color: #2196F3; box-shadow: 0 0 18px #097bbd;border-color:rgba(255, 255, 0, 0.144); color:white; }
+    to { background-color: #03A9F4; box-shadow: 0 0 9px #333;border-color:#2196F3; color:yellow; }
   }
   .hero-page-selected-hero .amplification-buttons li input:checked + label  {
     animation-name: redPulse;
@@ -124,7 +124,7 @@ label{
     }
     .hero-abilities-ul button{
         font-size:1rem;
-        border: solid brown 3px;
+        border: solid #2196F3 3px;
         padding:1px 6px;
     }
     .hero-abilities-ul{

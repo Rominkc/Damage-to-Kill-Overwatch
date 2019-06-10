@@ -5,14 +5,14 @@
       font-family: 'Roboto', sans-serif;*/
       .faq-general{
  
-        color: brown;
+        color: white;
         font-size: 3rem;
        
     }
     .faq-page{
         font-family: 'Righteous', cursive;
         font-family: 'Roboto', sans-serif;
-        color:brown;
+        color:white;
         display:grid;
         grid-template-columns: repeat(12,1fr);
        
@@ -25,10 +25,10 @@
     }
     .faq-content p a {
         text-decoration: none;
-        color: red;
+        color: white;
     }
     .faq-content p a:active,.faq-content p a:hover {
-        color: white;
+        color: #f6ab26;
     }
     .faq-content ul {
         list-style: none;
