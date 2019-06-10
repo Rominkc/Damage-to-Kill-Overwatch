@@ -8,6 +8,7 @@ import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
 import btnAbilityDescriptions from '../btnAbilityDescriptions';
 import BtnReactToolTip from '../BtnReactToolTip';//Custom react-tool-tip to give baseline style to all buttons
+import damageCalculationDPS from '../../Damage-Calculations/damageCalculationDPS';
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
 const LúcioPage =(props)=>{
@@ -43,11 +44,17 @@ const LúcioPage =(props)=>{
                         </ul>
                         <ul className="hero-abilities-ul">
                             <li>
+                                <button data-tip={btnAbilityDescriptions.DPSh}
+                                onClick={()=>damageCalculationDPS(Lúcio.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Lúcio.primaryFire.shotDamage,
+                                    Lúcio.primaryFire.pPerShot,headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
+                                    DPS
+                                    </button>   
                                 <button data-tip={btnAbilityDescriptions.X}
                                 onClick={()=>damageCalculation(Lúcio.primaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Lúcio.primaryFire.damage,
                                     headShotModifier,discordModifier,nanoBoostAmp,matrixAmp,superchargerAmp,damageBoostAmp)}>
                                     X
                                     </button>
+                              
                             </li>  
                             <li>
                                 <button data-tip={btnAbilityDescriptions.X}

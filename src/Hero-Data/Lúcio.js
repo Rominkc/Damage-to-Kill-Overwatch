@@ -15,6 +15,8 @@ const Lúcio = {
                     // i.e if multiplier is .3 and is applied fully when the shot is taken from 40meters away then this is the range that is assumed
                     // 20 per shot, 80 per burst (4 shots)
                     damage:20,
+                    shotDamage:80, // damage from one shot that shoots 4 projectiles
+                    pPerShot:4,
                     name:'Sonic Amplifier'
                 },
     secondaryFire:{
