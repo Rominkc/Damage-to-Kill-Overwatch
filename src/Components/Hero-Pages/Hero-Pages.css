@@ -29,10 +29,10 @@ min-width: 170px;
 .hero-abilities-ul{
     list-style: none;
     color: white;
-    font-family: 'Righteous', cursive;
+    font-family: big_noodle_titling,'Righteous', cursive;
     padding: 0;
     line-height: 2.2;
-    font-size:.8rem;
+    font-size:1.2rem;
     min-width: 35px;
 }
 .hero-abilities-ul li{
@@ -40,8 +40,8 @@ margin-right: 3px;
 }
 .hero-abilities-ul button{
     
-    font-family: 'Righteous', cursive;
-    font-size:.8rem;
+    font-family: big_noodle_titling,'Righteous', cursive;
+    font-size:1.2rem;
     background-color: #00BCD4;
     border: solid #2196F3 .5px;
     padding: 0px .5px;
@@ -58,15 +58,15 @@ margin-right: 3px;
     justify-content: center;
     max-width: 650px;
     justify-self: center;
-    font-family: 'Righteous', cursive;
+    font-family: big_noodle_titling,'Righteous', cursive;
     color: white;
     font-size: 1.5rem;
 }
 .ability-summary > p{
-    font-size: 1rem;
+    font-size: 1.2rem;
     max-height: 250px;
     max-width: 650px;
-    font-family: 'Righteous', cursive;
+    font-family: big_noodle_titling,'Righteous', cursive;
     overflow: overlay;
     padding-right: 20px;
 }
@@ -82,12 +82,12 @@ label{
     text-align: center;
 }
 .hero-page-selected-hero .amplification-buttons li {
-    font-family: 'Righteous', cursive;
+    font-family: big_noodle_titling,'Righteous', cursive;
     background-color: #00BCD4;
     margin-bottom: 5px;
     width: auto;
     border: solid #2196F3;
-    font-size: 1rem;
+    font-size: 1.5rem;
     display: inline-block;
     margin-right: 1px;
 }
@@ -111,7 +111,7 @@ label{
   }
   /*Button tool tip class */
   .react-tool-tip-btn{
-    font-family: 'Righteous', cursive;
+    font-family: big_noodle_titling,'Righteous', cursive;
   }
   /* Media Queries */
   @media screen and (min-width: 768px){
@@ -119,16 +119,16 @@ label{
         font-size: 3rem;
     }
     .ability-summary > p{
-        font-size:1.2rem;
+        font-size:1.5rem;
         max-height: 150px;
     }
     .hero-abilities-ul button{
-        font-size:1rem;
+        font-size:1.4rem;
         border: solid #2196F3 3px;
         padding:1px 6px;
     }
     .hero-abilities-ul{
-        font-size:1.2rem;
+        font-size:1.5rem;
         
     }
     .hero-page-container{

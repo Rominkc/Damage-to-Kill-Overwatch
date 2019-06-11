@@ -1,5 +1,5 @@
 .header-dmg2kOW{
-    font-family: 'Righteous', cursive;
+    font-family: big_noodle_titling, 'Righteous', cursive;
     /*font-family: 'Permanent Marker', cursive;
     font-family: 'Finger Paint', cursive;
     font-family: 'Frijole', cursive;
@@ -7,6 +7,7 @@
 
     color: white;
     font-size: 1.5rem;
+    font-weight: 100; /*So header isn't bold, looks bad with big_noodle_titling font*/
 }
 .header-dmg2kOW span{
     display: inline-block;

@@ -10,8 +10,7 @@
        
     }
     .faq-page{
-        font-family: 'Righteous', cursive;
-        font-family: 'Roboto', sans-serif;
+        font-family:'Roboto', sans-serif;
         color:white;
         display:grid;
         grid-template-columns: repeat(12,1fr);
@@ -25,10 +24,11 @@
     }
     .faq-content p a {
         text-decoration: none;
-        color: white;
+        color: #f6ab26;
     }
     .faq-content p a:active,.faq-content p a:hover {
-        color: #f6ab26;
+    
+        color: #00aeff;
     }
     .faq-content ul {
         list-style: none;
