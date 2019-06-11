@@ -73,12 +73,12 @@ const DoomfistPage =(props)=>{
                             </li>
                             <li>
                                 <button data-tip={btnAbilityDescriptions.Mn}
-                                 onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.minWallImpactDamage,
+                                 onClick={()=>damageCalculation(Doomfist.secondaryFire.name + " (Wall Impact)",setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.minWallImpactDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mn
                                     </button>
                                 <button data-tip={btnAbilityDescriptions.Mx}
-                                onClick={()=>damageCalculation(Doomfist.secondaryFire.name,setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.maxWallImpactDamage,
+                                onClick={()=>damageCalculation(Doomfist.secondaryFire.name + " (Wall Impact)",setAbilitySummary,setArmor,setHealth,armor,health,Doomfist.secondaryFire.maxWallImpactDamage,
                                     undefined,discordModifier,nanoBoostAmp,superchargerAmp,damageBoostAmp)}>
                                     Mx
                                     </button>
