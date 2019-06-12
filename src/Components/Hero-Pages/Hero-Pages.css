@@ -112,6 +112,7 @@ label{
   /*Button tool tip class */
   .react-tool-tip-btn{
     font-family: big_noodle_titling,'Righteous', cursive;
+    font-size:2rem;
   }
   /* Media Queries */
   @media screen and (min-width: 768px){
