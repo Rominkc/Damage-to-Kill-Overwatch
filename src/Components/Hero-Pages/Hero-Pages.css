@@ -63,7 +63,7 @@ margin-right: 3px;
     font-size: 1.5rem;
 }
 .ability-summary > p{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     max-height: 250px;
     max-width: 650px;
     font-family: big_noodle_titling,'Righteous', cursive;
@@ -119,7 +119,7 @@ label{
         font-size: 3rem;
     }
     .ability-summary > p{
-        font-size:1.5rem;
+        font-size:2rem;
         max-height: 150px;
     }
     .hero-abilities-ul button{
