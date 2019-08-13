@@ -7,7 +7,7 @@
 
     color: white;
     font-size: 1.5rem;
-    font-weight: 100; /*So header isn't bold, looks bad with big_noodle_titling font*/
+    font-weight: 100; 
 }
 .header-dmg2kOW span{
     display: inline-block;
@@ -18,7 +18,7 @@
     text-decoration: none;
     color: white;
     transition-duration: 250ms;
-    transition-property: color; /*Specify for performance, Can be cpu intensive if you just leave it as "all" which is the default */
+    transition-property: color; 
 }
 .header-link-dmg2kOW:hover{
     color: #f6ab26;
