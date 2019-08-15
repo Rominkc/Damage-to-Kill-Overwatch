@@ -1,8 +1,7 @@
 import React from 'react';
 import heroArray from '../../heroArray';
 import damageCalculation from '../../Damage-Calculations/damageCalculation';
-import damageCalculationDoT from '../../Damage-Calculations/damageCalculationDoT';
-import damageCalculationBTD from '../../Damage-Calculations/damageCalculationBTD';
+import damageCalculationDPS from '../../Damage-Calculations/damageCalculationDPS';
 import KillHeroList from '../../KillHeroList';
 import useHeroPageInfo from '../../useHeroPageInfo';
 import AmplificationButtons from '../../AmplificationButtons';
@@ -10,11 +9,10 @@ import AbilitySummary from '../AbilitySummary';
 import HeroPageKillHero from '../HeroPageKillHero';
 import btnAbilityDescriptions from '../btnAbilityDescriptions';
 import BtnReactToolTip from '../BtnReactToolTip'; //Custom react-tool-tip to give baseline style to all buttons
-
 //CSS for this component is the basis for all other css for page components
 //damageCalculation function takes in all state to calculate the new state
-const ZaryaPage = props => {
-  const Zarya = heroArray[29];
+const SigmaPage = props => {
+  const Sigma = heroArray[20];
   // Create necessary state for the page
   // eslint-disable-next-line
   const [
@@ -43,11 +41,11 @@ const ZaryaPage = props => {
   return (
     <div className='hero-page-container'>
       <div className='hero-page-selected-hero'>
-        <h1 className='header-dmg2kOW'>{Zarya.heroName}</h1>
+        <h1 className='header-dmg2kOW'>{Sigma.heroName}</h1>
         <img
-          src={Zarya.picture}
+          src={Sigma.picture}
           className='chosen-hero-img'
-          alt={Zarya.heroName}
+          alt={Sigma.heroName}
         />
 
         <AmplificationButtons
@@ -62,147 +60,150 @@ const ZaryaPage = props => {
 
         <div className='hero-abilities'>
           <ul className='hero-abilities-ul'>
-            <li>{Zarya.primaryFire.name} :</li>
-            <li>{Zarya.secondaryFire.name} :</li>
-            <li>{Zarya.abilityThree.name} :</li>
+            <li>{Sigma.primaryFire.name} :</li>
+
+            <li>{Sigma.abilityThree.name} :</li>
             <li>Melee :</li>
           </ul>
           <ul className='hero-abilities-ul'>
             <li>
               <button
-                data-tip={btnAbilityDescriptions.DPS}
+                data-tip={btnAbilityDescriptions.DH}
                 onClick={() =>
-                  damageCalculationBTD(
-                    Zarya.primaryFire.name,
+                  damageCalculationDPS(
+                    Sigma.primaryFire.name,
                     setAbilitySummary,
                     setArmor,
                     setHealth,
                     armor,
                     health,
-                    Zarya.primaryFire.damage,
+                    Sigma.primaryFire.directHitDamage,
+                    Sigma.primaryFire.pPerShot,
                     undefined,
                     discordModifier,
                     nanoBoostAmp,
+                    matrixAmp,
                     superchargerAmp,
                     damageBoostAmp
                   )
                 }
               >
-                DPS
+                DH
+              </button>
+              <button
+                data-tip={btnAbilityDescriptions.SMn}
+                onClick={() =>
+                  damageCalculationDPS(
+                    Sigma.primaryFire.name,
+                    setAbilitySummary,
+                    setArmor,
+                    setHealth,
+                    armor,
+                    health,
+                    Sigma.primaryFire.minSplashDamage,
+                    Sigma.primaryFire.pPerShot,
+                    undefined,
+                    discordModifier,
+                    nanoBoostAmp,
+                    matrixAmp,
+                    superchargerAmp,
+                    damageBoostAmp
+                  )
+                }
+              >
+                SMn
+              </button>
+              <button
+                data-tip={btnAbilityDescriptions.SMx}
+                onClick={() =>
+                  damageCalculationDPS(
+                    Sigma.primaryFire.name,
+                    setAbilitySummary,
+                    setArmor,
+                    setHealth,
+                    armor,
+                    health,
+                    Sigma.primaryFire.maxSplashDamage,
+                    Sigma.primaryFire.pPerShot,
+                    undefined,
+                    discordModifier,
+                    nanoBoostAmp,
+                    matrixAmp,
+                    superchargerAmp,
+                    damageBoostAmp
+                  )
+                }
+              >
+                SMx
               </button>
             </li>
+
             <li>
               <button
-                data-tip={btnAbilityDescriptions.Mn}
+                data-tip={btnAbilityDescriptions.DH}
                 onClick={() =>
                   damageCalculation(
-                    Zarya.secondaryFire.name,
+                    Sigma.abilityTwo.name,
                     setAbilitySummary,
                     setArmor,
                     setHealth,
                     armor,
                     health,
-                    Zarya.secondaryFire.minDamage,
+                    Sigma.abilityTwo.directHitDamage,
                     undefined,
                     discordModifier,
                     nanoBoostAmp,
+                    matrixAmp,
                     superchargerAmp,
-                    damageBoostAmp,
-                    matrixAmp
+                    damageBoostAmp
                   )
                 }
               >
-                Mn
+                DH
               </button>
               <button
-                data-tip={btnAbilityDescriptions.Mx}
+                data-tip={btnAbilityDescriptions.SMn}
                 onClick={() =>
                   damageCalculation(
-                    Zarya.secondaryFire.name,
+                    Sigma.abilityTwo.name,
                     setAbilitySummary,
                     setArmor,
                     setHealth,
                     armor,
                     health,
-                    Zarya.secondaryFire.maxDamage,
+                    Sigma.abilityTwo.minSplashDamage,
                     undefined,
                     discordModifier,
                     nanoBoostAmp,
+                    matrixAmp,
                     superchargerAmp,
-                    damageBoostAmp,
-                    matrixAmp
+                    damageBoostAmp
                   )
                 }
               >
-                Mx
+                SMn
               </button>
-            </li>
-            <li>
               <button
-                data-tip={btnAbilityDescriptions.Imp}
+                data-tip={btnAbilityDescriptions.SMx}
                 onClick={() =>
                   damageCalculation(
-                    Zarya.abilityThree.name,
+                    Sigma.abilityTwo.name,
                     setAbilitySummary,
                     setArmor,
                     setHealth,
                     armor,
                     health,
-                    Zarya.abilityThree.impactDamage,
+                    Sigma.abilityTwo.maxSplashDamage,
                     undefined,
                     discordModifier,
                     nanoBoostAmp,
+                    matrixAmp,
                     superchargerAmp,
-                    damageBoostAmp,
-                    matrixAmp
+                    damageBoostAmp
                   )
                 }
               >
-                Imp
-              </button>
-              <button
-                data-tip={btnAbilityDescriptions.DPS}
-                onClick={() =>
-                  damageCalculationDoT(
-                    Zarya.abilityThree.name,
-                    setAbilitySummary,
-                    setArmor,
-                    setHealth,
-                    armor,
-                    health,
-                    Zarya.abilityThree.damagePerSecond,
-                    undefined,
-                    discordModifier,
-                    nanoBoostAmp,
-                    superchargerAmp,
-                    damageBoostAmp,
-                    matrixAmp
-                  )
-                }
-              >
-                DPS
-              </button>
-              <button
-                data-tip={btnAbilityDescriptions.DoT}
-                onClick={() =>
-                  damageCalculationDoT(
-                    Zarya.abilityThree.name,
-                    setAbilitySummary,
-                    setArmor,
-                    setHealth,
-                    armor,
-                    health,
-                    Zarya.abilityThree.damageOverTime,
-                    undefined,
-                    discordModifier,
-                    nanoBoostAmp,
-                    superchargerAmp,
-                    damageBoostAmp,
-                    matrixAmp
-                  )
-                }
-              >
-                DoT
+                SMx
               </button>
             </li>
             <li>
@@ -216,7 +217,7 @@ const ZaryaPage = props => {
                     setHealth,
                     armor,
                     health,
-                    Zarya.melee,
+                    Sigma.melee,
                     undefined,
                     discordModifier,
                     nanoBoostAmp,
@@ -243,4 +244,4 @@ const ZaryaPage = props => {
     </div>
   );
 };
-export default ZaryaPage;
+export default SigmaPage;

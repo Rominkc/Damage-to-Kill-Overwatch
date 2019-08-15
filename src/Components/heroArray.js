@@ -18,6 +18,7 @@ import Pharah from '../Hero-Data/Pharah';
 import Reaper from '../Hero-Data/Reaper';
 import Reinhardt from '../Hero-Data/Reinhardt';
 import Roadhog from '../Hero-Data/Roadhog';
+import Sigma from '../Hero-Data/Sigma'; // First new hero added August 15,2019
 import Soldier76 from '../Hero-Data/Soldier76';
 import Sombra from '../Hero-Data/Sombra';
 import Symmetra from '../Hero-Data/Symmetra';
@@ -30,36 +31,37 @@ import Zarya from '../Hero-Data/Zarya';
 import Zenyatta from '../Hero-Data/Zenyatta';
 
 // Contains all of the hero objects
-const heroArray =[
-    Ana,
-    Ashe,
-    Baptiste,
-    Bastion,
-    Brigitte,
-    Doomfist,
-    DVa,
-    Genji,
-    Hanzo,
-    Junkrat,
-    Lúcio,
-    McCree,
-    Mei, 
-    Mercy,
-    Moira,
-    Orisa,
-    Pharah,
-    Reaper,
-    Reinhardt,
-    Roadhog,
-    Soldier76,
-    Sombra,
-    Symmetra,
-    Torbjörn,
-    Tracer,
-    Widowmaker,
-    Winston,
-    Wreckingball,
-    Zarya,
-    Zenyatta,
+const heroArray = [
+  Ana,
+  Ashe,
+  Baptiste,
+  Bastion,
+  Brigitte,
+  Doomfist,
+  DVa,
+  Genji,
+  Hanzo,
+  Junkrat,
+  Lúcio,
+  McCree,
+  Mei,
+  Mercy,
+  Moira,
+  Orisa,
+  Pharah,
+  Reaper,
+  Reinhardt,
+  Roadhog,
+  Sigma,
+  Soldier76,
+  Sombra,
+  Symmetra,
+  Torbjörn,
+  Tracer,
+  Widowmaker,
+  Winston,
+  Wreckingball,
+  Zarya,
+  Zenyatta
 ];
 export default heroArray;
