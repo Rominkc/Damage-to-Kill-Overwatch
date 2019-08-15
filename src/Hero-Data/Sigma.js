@@ -50,8 +50,8 @@ const Sigma = {
     doesDamage: true,
     canHeadshot: false,
     //Sigma directs a continuous salvo of mini-rockets to destroy groups of enemies.
-    minDamage: 10,
-    maxDamage: 40,
+    liftDamage: 50, // Does 50 damage from lift and 50% of the hero affected's max hp
+
     name: 'Gravitic Flux'
   },
   melee: 30

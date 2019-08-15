@@ -61,7 +61,7 @@ const SigmaPage = props => {
         <div className='hero-abilities'>
           <ul className='hero-abilities-ul'>
             <li>{Sigma.primaryFire.name} :</li>
-
+            <li>{Sigma.abilityTwo.name} :</li>
             <li>{Sigma.abilityThree.name} :</li>
             <li>Melee :</li>
           </ul>
@@ -204,6 +204,47 @@ const SigmaPage = props => {
                 }
               >
                 SMx
+              </button>
+            </li>
+            <li>
+              <button
+                data-tip={btnAbilityDescriptions.LD}
+                onClick={() =>
+                  damageCalculation(
+                    Sigma.abilityThree.name,
+                    setAbilitySummary,
+                    setArmor,
+                    setHealth,
+                    armor,
+                    health,
+                    Sigma.abilityThree.liftDamage,
+                    undefined,
+                    discordModifier,
+                    nanoBoostAmp,
+                    superchargerAmp,
+                    damageBoostAmp
+                  )
+                }
+              >
+                LD
+              </button>
+              <button
+                data-tip={btnAbilityDescriptions.SD}
+                onClick={() =>
+                  damageCalculation(
+                    Sigma.abilityThree.name,
+                    setAbilitySummary,
+                    setArmor,
+                    setHealth,
+                    armor,
+                    health,
+                    killHero.health * 0.5,
+                    undefined,
+                    discordModifier
+                  )
+                }
+              >
+                SD
               </button>
             </li>
             <li>
