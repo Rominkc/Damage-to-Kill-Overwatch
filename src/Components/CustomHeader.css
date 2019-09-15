@@ -1,36 +1,38 @@
-.header-dmg2kOW{
-    font-family: big_noodle_titling, 'Righteous', cursive;
-    /*font-family: 'Permanent Marker', cursive;
+.header-dmg2kOW {
+  font-family: big_noodle_titling, 'Righteous', cursive;
+  /*font-family: 'Permanent Marker', cursive;
     font-family: 'Finger Paint', cursive;
     font-family: 'Frijole', cursive;
     font-family: 'Roboto', sans-serif;*/
 
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 100; 
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 100;
 }
-.header-dmg2kOW span{
-    display: inline-block;
-    margin-top:2.5rem;
-    margin-left:20px;
+.header-dmg2kOW span {
+  display: inline-block;
+  margin-top: 2.5rem;
+  margin-left: 20px;
 }
-.header-link-dmg2kOW{
-    text-decoration: none;
-    color: white;
-    transition-duration: 250ms;
-    transition-property: color; 
+.header-link-dmg2kOW {
+  text-decoration: none;
+  color: white;
+  transition-duration: 250ms;
+  transition-property: color;
 }
-.header-link-dmg2kOW:hover{
-    color: #f6ab26;
-    
+.header-link-dmg2kOW:hover {
+  color: #f6ab26;
 }
-@media screen and (min-width: 768px){
-    .header-dmg2kOW{
-        font-size: 3rem;
-       /* margin-right: 50px; */
-    }
-    .header-dmg2kOW span{
-        margin-left:50px;
-    }
-    
+.main-header {
+  text-align: left;
+  background-image: linear-gradient(#22424b, #292929);
+}
+@media screen and (min-width: 768px) {
+  .header-dmg2kOW {
+    font-size: 3rem;
+    /* margin-right: 50px; */
+  }
+  .header-dmg2kOW span {
+    margin-left: 50px;
+  }
 }
